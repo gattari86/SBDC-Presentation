@@ -115,7 +115,40 @@
         .bg-gradient--purple { background: var(--accent); }
         .slide-footer { position: absolute; bottom: 1rem; left: var(--slide-padding); right: var(--slide-padding); display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); }
         .slide--title .slide-footer, .slide--section .slide-footer, .slide--stats .slide-footer { color: rgba(255,255,255,0.4); }
-        @media (max-width: 768px) { .nav-dots { display: none; } .poll-grid { grid-template-columns: repeat(2, 1fr); } .check-grid { grid-template-columns: repeat(2, 1fr); } .timeline { flex-direction: column; gap: 1rem; } .timeline::before { display: none; } }
+        @media (max-width: 768px) {
+            .nav-dots { display: none; }
+            .slide { padding: 1.5rem; }
+            .slide-content { max-width: 100%; }
+            .poll-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+            .poll-option { padding: 1rem 0.75rem; }
+            .check-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+            .check-item { padding: 0.5rem; }
+            .check-item .check-icon { width: 40px; height: 40px; }
+            .timeline { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            .timeline::before { display: none; }
+            .timeline-point { text-align: left; padding: 0; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .flow { gap: 0.75rem; }
+            .flow-item { min-width: 80px; padding: 0.75rem; }
+            .flow-item p { font-size: 0.75rem; }
+            .flow-arrow { transform: rotate(90deg); }
+            .card { padding: 1rem; }
+            .steps { gap: 0.75rem; }
+            .step { gap: 0.75rem; }
+            .step-number { width: 32px; height: 32px; font-size: 0.9rem; }
+            .troubleshoot-grid { grid-template-columns: 1fr; }
+            .troubleshoot-card { padding: 1rem; }
+            .icon-box { width: 36px; height: 36px; }
+            .slide-footer { flex-direction: column; gap: 0.25rem; text-align: center; }
+            .bg-gradient { width: 300px; height: 300px; }
+            img { max-width: 100%; height: auto; }
+        }
+        @media (max-width: 480px) {
+            .poll-grid { grid-template-columns: 1fr; }
+            .check-grid { grid-template-columns: 1fr; }
+            .flow { flex-direction: column; }
+            .flow-arrow { transform: rotate(90deg); }
+        }
         @media (prefers-reduced-motion: reduce) { .reveal { transition: opacity 0.3s ease; transform: none; } }
     </style>
 </head>
