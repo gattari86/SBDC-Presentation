@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Never Miss a Lead Again | SBDC Workshop</title>
+
+    <!-- Fonts: Poppins for headers, Raleway for body (Poppy Brand) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES - POPPY BRAND THEME
+           Colors from Poppy Marketing & Consulting
+           =========================================== */
+        :root {
+            /* Primary Poppy Colors */
+            --ivory-pearl: #F6F4EF;
+            --poppy-purple: #6B4EFF;
+            --deep-charcoal: #1F1F1F;
+
+            /* Secondary Colors */
+            --electric-violet: #8B7CFF;
+            --warm-gray: #F4F4F6;
+            --soft-lilac: #E9E6FF;
+
+            /* Semantic aliases */
+            --bg-primary: var(--ivory-pearl);
+            --bg-dark: var(--deep-charcoal);
+            --accent: var(--poppy-purple);
+            --accent-hover: var(--electric-violet);
+            --text-primary: var(--deep-charcoal);
+            --text-light: var(--ivory-pearl);
+            --text-muted: #6B7280;
+
+            /* Typography */
+            --font-display: 'Poppins', sans-serif;
+            --font-body: 'Raleway', sans-serif;
+
+            /* Spacing */
+            --slide-padding: clamp(2rem, 5vw, 4rem);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --duration-normal: 0.6s;
+            --duration-slow: 1s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* ===========================================
+           PROGRESS BAR
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        /* ===========================================
+           NAVIGATION DOTS
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            opacity: 0.3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-dot:hover {
+            opacity: 0.6;
+            transform: scale(1.2);
+        }
+
+        .nav-dot.active {
+            opacity: 1;
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .nav-dot.section-start {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           =========================================== */
+        .slide {
+            min-height: 100vh;
+            padding: var(--slide-padding);
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===========================================
+           SLIDE VARIANTS
+           =========================================== */
+
+        /* Title Slide - Dark with accent */
+        .slide--title {
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .slide--title .eyebrow {
+            color: var(--accent);
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide--title h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+
+        .slide--title .subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            opacity: 0.8;
+            max-width: 700px;
+        }
+
+        .slide--title .author {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .slide--title .author-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide--title .author-info h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        .slide--title .author-info p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Section Slide - Purple accent */
+        .slide--section {
+            background: var(--accent);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .slide--section .section-number {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .slide--section h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        .slide--section .section-desc {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Slide - Light background */
+        .slide--content {
+            background: var(--bg-primary);
+        }
+
+        .slide--content h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .slide--content h2 .accent {
+            color: var(--accent);
+        }
+
+        /* Stats Slide */
+        .slide--stats {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: clamp(1.25rem, 2.5vw, 2rem);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* ===========================================
+           COMPONENTS
+           =========================================== */
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .card--lilac {
+            background: var(--soft-lilac);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card h3 i {
+            color: var(--accent);
+        }
+
+        /* Icon Boxes */
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--soft-lilac);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        /* Lists */
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .feature-list li i {
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        /* Step indicators */
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.125rem;
+            flex-shrink: 0;
+        }
+
+        /* Flow diagram */
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+        }
+
+        .flow-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .flow-item i {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-arrow {
+            color: var(--accent);
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .comparison-card {
+            padding: 2rem;
+            border-radius: 16px;
+        }
+
+        .comparison-card--before {
+            background: #FEE2E2;
+            border: 2px solid #EF4444;
+        }
+
+        .comparison-card--after {
+            background: #DCFCE7;
+            border: 2px solid #22C55E;
+        }
+
+        .comparison-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-card--before h3 { color: #DC2626; }
+        .comparison-card--after h3 { color: #16A34A; }
+
+        /* Screenshot mockup */
+        .screenshot {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+
+        .screenshot-header {
+            background: #E5E7EB;
+            padding: 0.75rem 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .screenshot-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #9CA3AF;
+        }
+
+        .screenshot-dot--red { background: #EF4444; }
+        .screenshot-dot--yellow { background: #F59E0B; }
+        .screenshot-dot--green { background: #22C55E; }
+
+        .screenshot-body {
+            padding: 1.5rem;
+            background: var(--warm-gray);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Numbered steps */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .step-content h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+        }
+
+        /* Phase badge */
+        .phase-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--soft-lilac);
+            color: var(--accent);
+            border-radius: 100px;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Troubleshooting cards */
+        .troubleshoot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .troubleshoot-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .troubleshoot-card h4 {
+            color: #DC2626;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .troubleshoot-card p {
+            color: #16A34A;
+            font-size: 0.9rem;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .reveal--left {
+            transform: translateX(-30px);
+        }
+
+        .reveal--right {
+            transform: translateX(30px);
+        }
+
+        .reveal--scale {
+            transform: scale(0.9);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1);
+        }
+
+        /* Stagger children */
+        .slide.visible .reveal:nth-child(1) { transition-delay: 0.1s; }
+        .slide.visible .reveal:nth-child(2) { transition-delay: 0.2s; }
+        .slide.visible .reveal:nth-child(3) { transition-delay: 0.3s; }
+        .slide.visible .reveal:nth-child(4) { transition-delay: 0.4s; }
+        .slide.visible .reveal:nth-child(5) { transition-delay: 0.5s; }
+        .slide.visible .reveal:nth-child(6) { transition-delay: 0.6s; }
+
+        /* Counter animation */
+        .counter {
+            display: inline-block;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Pulse glow */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(107, 78, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(107, 78, 255, 0.6); }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        /* ===========================================
+           DECORATIVE ELEMENTS
+           =========================================== */
+        .bg-gradient {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .bg-gradient--purple {
+            background: var(--accent);
+        }
+
+        .bg-gradient--lilac {
+            background: var(--soft-lilac);
+        }
+
+        /* Grid pattern overlay */
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(107, 78, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(107, 78, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        /* ===========================================
+           KEYBOARD HINT
+           =========================================== */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(31, 31, 31, 0.9);
+            color: white;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            z-index: 100;
+        }
+
+        .keyboard-hint kbd {
+            background: rgba(255,255,255,0.2);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: var(--font-display);
+        }
+
+        .keyboard-hint.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* ===========================================
+           FOOTER
+           =========================================== */
+        .slide-footer {
+            position: absolute;
+            bottom: 1.5rem;
+            left: var(--slide-padding);
+            right: var(--slide-padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .slide--title .slide-footer,
+        .slide--section .slide-footer {
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ===========================================
+           RESPONSIVE
+           =========================================== */
+        @media (max-width: 768px) {
+            .nav-dots {
+                display: none;
+            }
+
+            .keyboard-hint {
+                display: none;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: opacity 0.3s ease;
+                transform: none;
+            }
+
+            .float {
+                animation: none;
+            }
+
+            .pulse-glow {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation Dots -->
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <!-- Keyboard Hint -->
+    <div class="keyboard-hint" id="keyboardHint">
+        <span>Navigate with</span>
+        <kbd>↑</kbd><kbd>↓</kbd>
+        <span>or</span>
+        <kbd>Space</kbd>
+    </div>
+
+    <!-- =============================================
+         SLIDE 1: TITLE
+         ============================================= -->
+    <section class="slide slide--title" data-section="intro">
+        <div class="bg-gradient bg-gradient--purple" style="top: -200px; right: -200px;"></div>
+        <div class="slide-content">
+            <p class="eyebrow reveal">UH SBDC Workshop</p>
+            <h1 class="reveal">Never Miss a Lead Again</h1>
+            <p class="subtitle reveal">Build Your Automated Response System in 2.5 Hours</p>
+
+            <div class="author reveal">
+                <div class="author-avatar">
+                    <i data-lucide="user" style="width: 28px; height: 28px;"></i>
+                </div>
+                <div class="author-info">
+                    <h4>Ricardo Gattas-Moras</h4>
+                    <p>Poppy Marketing & Consulting</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>© 2025 Poppy Marketing & Consulting</span>
+            <span>poppymarketingandconsulting.com</span>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 2: PROBLEM STAT
+         ============================================= -->
+    <section class="slide slide--stats" data-section="problem">
+        <div class="slide-content" style="text-align: center;">
+            <p class="reveal" style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 1rem;">The brutal truth about lead response</p>
+            <div class="stat-number reveal counter" data-target="78">0</div>
+            <p class="stat-number reveal" style="font-size: 3rem;">%</p>
+            <p class="stat-label reveal">of consumers buy from the company that responds first</p>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 3: THE PROBLEM
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <h2 class="reveal">The <span class="accent">Reality</span> for Small Businesses</h2>
+
+            <div class="comparison-grid">
+                <div class="comparison-card comparison-card--before reveal">
+                    <h3><i data-lucide="alert-triangle"></i> Without Automation</h3>
+                    <ul class="feature-list">
+                        <li><i data-lucide="x"></i> Leads wait hours (or days) for a response</li>
+                        <li><i data-lucide="x"></i> You're glued to your phone 24/7</li>
+                        <li><i data-lucide="x"></i> Hot leads go cold while you sleep</li>
+                        <li><i data-lucide="x"></i> Weekends = missed opportunities</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card comparison-card--after reveal">
+                    <h3><i data-lucide="check-circle"></i> With Automation</h3>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check"></i> Instant response, every time</li>
+                        <li><i data-lucide="check"></i> Works while you sleep</li>
+                        <li><i data-lucide="check"></i> Professional first impression</li>
+                        <li><i data-lucide="check"></i> Never miss another lead</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 4: WHAT WE'LL BUILD
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <h2 class="reveal">What We're <span class="accent">Building</span> Today</h2>
+
+            <div class="flow reveal">
+                <div class="flow-item float" style="animation-delay: 0s;">
+                    <i data-lucide="file-text" style="width: 32px; height: 32px;"></i>
+                    <p><strong>Google Form</strong></p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Capture leads</p>
+                </div>
+
+                <i data-lucide="arrow-right" class="flow-arrow" style="width: 24px; height: 24px;"></i>
+
+                <div class="flow-item float" style="animation-delay: 0.2s;">
+                    <i data-lucide="zap" style="width: 32px; height: 32px;"></i>
+                    <p><strong>Make.com</strong></p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Automation</p>
+                </div>
+
+                <i data-lucide="arrow-right" class="flow-arrow" style="width: 24px; height: 24px;"></i>
+
+                <div class="flow-item float" style="animation-delay: 0.4s;">
+                    <i data-lucide="mail" style="width: 32px; height: 32px;"></i>
+                    <p><strong>Gmail</strong></p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Send response</p>
+                </div>
+            </div>
+
+            <div class="card card--lilac reveal" style="margin-top: 2rem; text-align: center;">
+                <p style="font-size: 1.125rem;"><strong>Result:</strong> A lead submits your form → They get a personalized email within seconds</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 5: PHASE 1A SECTION
+         ============================================= -->
+    <section class="slide slide--section" data-section="phase1a">
+        <div class="slide-content">
+            <p class="section-number reveal">Phase 1A</p>
+            <h2 class="reveal">Google Forms</h2>
+            <p class="section-desc reveal">Create your lead capture form</p>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 6: GOOGLE FORMS SETUP
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <div class="phase-badge reveal">
+                <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
+                Phase 1A: Google Forms
+            </div>
+            <h2 class="reveal">Create Your <span class="accent">Contact Form</span></h2>
+
+            <div class="two-col">
+                <div class="steps reveal">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Go to forms.google.com</h4>
+                            <p>Sign in with your Google account</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Start a blank form</h4>
+                            <p>Click the + button to create new</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Add essential fields</h4>
+                            <p>Name, Email, Phone, Message</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Customize & publish</h4>
+                            <p>Add your branding and get the link</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshot reveal--right reveal">
+                    <div class="screenshot-header">
+                        <div class="screenshot-dot screenshot-dot--red"></div>
+                        <div class="screenshot-dot screenshot-dot--yellow"></div>
+                        <div class="screenshot-dot screenshot-dot--green"></div>
+                    </div>
+                    <div class="screenshot-body">
+                        <div style="text-align: center;">
+                            <i data-lucide="file-text" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                            <p>Google Forms Interface</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 7: REQUIRED FIELDS
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <div class="phase-badge reveal">
+                <i data-lucide="list-checks" style="width: 16px; height: 16px;"></i>
+                Required Fields
+            </div>
+            <h2 class="reveal">Essential Form <span class="accent">Questions</span></h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div class="card reveal">
+                    <h3><i data-lucide="user" style="width: 20px; height: 20px;"></i> Full Name</h3>
+                    <p style="color: var(--text-muted);">Short answer, required</p>
+                </div>
+                <div class="card reveal">
+                    <h3><i data-lucide="mail" style="width: 20px; height: 20px;"></i> Email Address</h3>
+                    <p style="color: var(--text-muted);">Short answer, required, validated</p>
+                </div>
+                <div class="card reveal">
+                    <h3><i data-lucide="phone" style="width: 20px; height: 20px;"></i> Phone Number</h3>
+                    <p style="color: var(--text-muted);">Short answer, optional</p>
+                </div>
+                <div class="card reveal">
+                    <h3><i data-lucide="message-square" style="width: 20px; height: 20px;"></i> How Can We Help?</h3>
+                    <p style="color: var(--text-muted);">Paragraph text, required</p>
+                </div>
+            </div>
+
+            <div class="card card--lilac reveal" style="margin-top: 2rem;">
+                <p><strong>Pro Tip:</strong> Keep it simple! Every extra field reduces submissions by ~10%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 8: PHASE 1B SECTION
+         ============================================= -->
+    <section class="slide slide--section" data-section="phase1b">
+        <div class="slide-content">
+            <p class="section-number reveal">Phase 1B</p>
+            <h2 class="reveal">Make.com</h2>
+            <p class="section-desc reveal">Connect your form to email automation</p>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 9: WHAT IS MAKE
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <h2 class="reveal">What is <span class="accent">Make.com</span>?</h2>
+
+            <div class="two-col">
+                <div class="reveal">
+                    <p style="font-size: 1.25rem; margin-bottom: 2rem;">Make.com is a visual automation platform that connects your apps and services without code.</p>
+
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i> Free tier: 1,000 operations/month</li>
+                        <li><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i> Visual drag-and-drop builder</li>
+                        <li><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i> 1,500+ app integrations</li>
+                        <li><i data-lucide="check-circle" style="width: 20px; height: 20px;"></i> No coding required</li>
+                    </ul>
+                </div>
+
+                <div class="card reveal--scale reveal pulse-glow" style="text-align: center; padding: 3rem;">
+                    <i data-lucide="zap" style="width: 64px; height: 64px; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.5rem;">Visual Automation</h3>
+                    <p style="color: var(--text-muted);">Build workflows by connecting modules</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 10: CREATE SCENARIO
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <div class="phase-badge reveal">
+                <i data-lucide="git-branch" style="width: 16px; height: 16px;"></i>
+                Make.com Setup
+            </div>
+            <h2 class="reveal">Create Your <span class="accent">Scenario</span></h2>
+
+            <div class="steps reveal" style="max-width: 700px;">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Sign up at make.com</h4>
+                        <p>Create a free account (no credit card needed)</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Create New Scenario</h4>
+                        <p>Click "Create a new scenario" button</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Add Google Forms module</h4>
+                        <p>Search for "Google Forms" and add "Watch Responses"</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Connect your Google account</h4>
+                        <p>Authorize Make.com to access your forms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 11: ADD GMAIL MODULE
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <div class="phase-badge reveal">
+                <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+                Gmail Integration
+            </div>
+            <h2 class="reveal">Connect <span class="accent">Gmail</span></h2>
+
+            <div class="two-col">
+                <div class="steps reveal">
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Add Gmail module</h4>
+                            <p>Click the + and search for "Gmail"</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Select "Send an Email"</h4>
+                            <p>This will be your auto-response action</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Connect your Gmail</h4>
+                            <p>Authorize access to send emails</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow reveal--right reveal" style="flex-direction: column;">
+                    <div class="flow-item">
+                        <i data-lucide="file-text" style="width: 24px; height: 24px;"></i>
+                        <p>Google Forms</p>
+                    </div>
+                    <i data-lucide="arrow-down" class="flow-arrow" style="width: 24px; height: 24px;"></i>
+                    <div class="flow-item pulse-glow">
+                        <i data-lucide="mail" style="width: 24px; height: 24px;"></i>
+                        <p>Gmail</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 12: PHASE 1C SECTION
+         ============================================= -->
+    <section class="slide slide--section" data-section="phase1c">
+        <div class="slide-content">
+            <p class="section-number reveal">Phase 1C</p>
+            <h2 class="reveal">Email Template</h2>
+            <p class="section-desc reveal">Craft your perfect auto-response</p>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 13: EMAIL TEMPLATE
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <h2 class="reveal">Your <span class="accent">Auto-Response</span> Email</h2>
+
+            <div class="two-col">
+                <div class="reveal">
+                    <h3 style="margin-bottom: 1rem;">Key Elements</h3>
+                    <ul class="feature-list">
+                        <li><i data-lucide="user" style="width: 20px; height: 20px;"></i> Personalize with their name</li>
+                        <li><i data-lucide="clock" style="width: 20px; height: 20px;"></i> Set response time expectation</li>
+                        <li><i data-lucide="phone" style="width: 20px; height: 20px;"></i> Provide alternative contact</li>
+                        <li><i data-lucide="heart" style="width: 20px; height: 20px;"></i> Thank them for reaching out</li>
+                    </ul>
+                </div>
+
+                <div class="card reveal--right reveal" style="background: var(--bg-dark); color: var(--text-light);">
+                    <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 0.5rem;">Subject: Thanks for reaching out!</p>
+                    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 1rem 0;">
+                    <p>Hi <span style="color: var(--accent);">{{Name}}</span>,</p>
+                    <br>
+                    <p>Thank you for contacting us! We received your message and will get back to you within 24 hours.</p>
+                    <br>
+                    <p>In the meantime, feel free to call us at (555) 123-4567.</p>
+                    <br>
+                    <p>Best regards,<br>Your Team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 14: DYNAMIC FIELDS
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <div class="phase-badge reveal">
+                <i data-lucide="code" style="width: 16px; height: 16px;"></i>
+                Dynamic Content
+            </div>
+            <h2 class="reveal">Map Your <span class="accent">Form Fields</span></h2>
+
+            <div class="card reveal" style="max-width: 700px; margin: 2rem auto;">
+                <p style="margin-bottom: 1.5rem;">In Make.com, click on form field variables to insert them into your email:</p>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                    <div style="background: var(--soft-lilac); padding: 0.75rem 1.25rem; border-radius: 8px; font-family: monospace; color: var(--accent);">
+                        {{Full Name}}
+                    </div>
+                    <div style="background: var(--soft-lilac); padding: 0.75rem 1.25rem; border-radius: 8px; font-family: monospace; color: var(--accent);">
+                        {{Email}}
+                    </div>
+                    <div style="background: var(--soft-lilac); padding: 0.75rem 1.25rem; border-radius: 8px; font-family: monospace; color: var(--accent);">
+                        {{Message}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card--lilac reveal" style="max-width: 700px; margin: 0 auto;">
+                <p><strong>💡 Tip:</strong> These variables automatically pull the data from each form submission</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 15: TEST & ACTIVATE
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <h2 class="reveal">Test & <span class="accent">Activate</span></h2>
+
+            <div class="steps reveal" style="max-width: 700px; margin: 0 auto;">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Run Once</h4>
+                        <p>Click "Run once" to test your scenario</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Submit a test form</h4>
+                        <p>Fill out your Google Form with test data</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Check your email</h4>
+                        <p>Verify you received the auto-response</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Turn ON scheduling</h4>
+                        <p>Set to run "Immediately" for instant responses</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card reveal" style="background: #DCFCE7; border: 2px solid #22C55E; max-width: 700px; margin: 2rem auto 0; text-align: center;">
+                <p style="color: #16A34A; font-size: 1.25rem;"><strong>🎉 Phase 1 Complete!</strong></p>
+                <p style="color: #166534;">Your basic automation is now live</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 16: TROUBLESHOOTING
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <h2 class="reveal">Common <span class="accent">Issues</span> & Fixes</h2>
+
+            <div class="troubleshoot-grid reveal">
+                <div class="troubleshoot-card">
+                    <h4><i data-lucide="alert-circle" style="width: 16px; height: 16px;"></i> Form not detected</h4>
+                    <p>✓ Make sure you've submitted at least one response to the form</p>
+                </div>
+                <div class="troubleshoot-card">
+                    <h4><i data-lucide="alert-circle" style="width: 16px; height: 16px;"></i> Email not sending</h4>
+                    <p>✓ Check Gmail connection permissions in Make.com</p>
+                </div>
+                <div class="troubleshoot-card">
+                    <h4><i data-lucide="alert-circle" style="width: 16px; height: 16px;"></i> Variables showing blank</h4>
+                    <p>✓ Verify field mappings match your form questions exactly</p>
+                </div>
+                <div class="troubleshoot-card">
+                    <h4><i data-lucide="alert-circle" style="width: 16px; height: 16px;"></i> Scenario not running</h4>
+                    <p>✓ Toggle scheduling ON and set to "Immediately"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 17: PHASE 2 SECTION
+         ============================================= -->
+    <section class="slide slide--section" data-section="phase2">
+        <div class="slide-content">
+            <p class="section-number reveal">Phase 2 (Optional)</p>
+            <h2 class="reveal">AI-Powered Upgrade</h2>
+            <p class="section-desc reveal">Make your responses intelligent with OpenAI</p>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 18: WHY AI
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <h2 class="reveal">Why Add <span class="accent">AI</span>?</h2>
+
+            <div class="comparison-grid">
+                <div class="card reveal">
+                    <h3 style="margin-bottom: 1.5rem;">Basic Auto-Response</h3>
+                    <ul class="feature-list">
+                        <li><i data-lucide="minus" style="width: 20px; height: 20px; color: var(--text-muted);"></i> Same email for everyone</li>
+                        <li><i data-lucide="minus" style="width: 20px; height: 20px; color: var(--text-muted);"></i> Generic greeting</li>
+                        <li><i data-lucide="minus" style="width: 20px; height: 20px; color: var(--text-muted);"></i> Fixed content</li>
+                    </ul>
+                </div>
+
+                <div class="card reveal" style="border: 2px solid var(--accent);">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--accent);">AI-Powered Response</h3>
+                    <ul class="feature-list">
+                        <li><i data-lucide="sparkles" style="width: 20px; height: 20px; color: var(--accent);"></i> Personalized to their inquiry</li>
+                        <li><i data-lucide="sparkles" style="width: 20px; height: 20px; color: var(--accent);"></i> Addresses their specific needs</li>
+                        <li><i data-lucide="sparkles" style="width: 20px; height: 20px; color: var(--accent);"></i> Feels human-written</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 19: OPENAI SETUP
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <div class="phase-badge reveal">
+                <i data-lucide="brain" style="width: 16px; height: 16px;"></i>
+                OpenAI Integration
+            </div>
+            <h2 class="reveal">Add <span class="accent">ChatGPT</span> to Your Workflow</h2>
+
+            <div class="flow reveal" style="margin: 2rem 0;">
+                <div class="flow-item">
+                    <i data-lucide="file-text" style="width: 24px; height: 24px;"></i>
+                    <p>Form</p>
+                </div>
+                <i data-lucide="arrow-right" class="flow-arrow" style="width: 24px; height: 24px;"></i>
+                <div class="flow-item pulse-glow" style="border: 2px solid var(--accent);">
+                    <i data-lucide="brain" style="width: 24px; height: 24px;"></i>
+                    <p><strong>OpenAI</strong></p>
+                </div>
+                <i data-lucide="arrow-right" class="flow-arrow" style="width: 24px; height: 24px;"></i>
+                <div class="flow-item">
+                    <i data-lucide="mail" style="width: 24px; height: 24px;"></i>
+                    <p>Gmail</p>
+                </div>
+            </div>
+
+            <div class="steps reveal" style="max-width: 700px; margin: 0 auto;">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Get OpenAI API Key</h4>
+                        <p>Sign up at platform.openai.com and create an API key</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Add OpenAI module in Make.com</h4>
+                        <p>Insert between Google Forms and Gmail</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Write your prompt</h4>
+                        <p>Tell AI how to respond based on form data</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 20: AI PROMPT
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <h2 class="reveal">Crafting Your <span class="accent">AI Prompt</span></h2>
+
+            <div class="card reveal" style="background: var(--bg-dark); color: var(--text-light); max-width: 800px; margin: 0 auto;">
+                <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 1rem;">System Prompt:</p>
+                <p style="font-family: monospace; line-height: 1.8;">
+                    You are a friendly customer service representative for [Your Business Name].
+                    Write a warm, professional email response to a potential customer who just contacted us.
+                    <br><br>
+                    <span style="color: var(--accent);">Their name:</span> {{Name}}<br>
+                    <span style="color: var(--accent);">Their message:</span> {{Message}}<br><br>
+                    Keep the response under 150 words. Be helpful and mention we'll follow up within 24 hours.
+                </p>
+            </div>
+
+            <div class="card card--lilac reveal" style="max-width: 800px; margin: 1.5rem auto 0;">
+                <p><strong>💡 Key:</strong> Include context about your business and guide the AI on tone and length</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 21: CONGRATULATIONS
+         ============================================= -->
+    <section class="slide slide--stats" data-section="complete">
+        <div class="slide-content" style="text-align: center;">
+            <div class="reveal" style="font-size: 5rem; margin-bottom: 1rem;">🎉</div>
+            <h2 class="reveal" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem;">You Did It!</h2>
+            <p class="reveal" style="font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">
+                Your automated lead response system is now live.
+                Every form submission gets an instant, professional response.
+            </p>
+
+            <div style="display: flex; gap: 2rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                <div class="card reveal" style="background: rgba(255,255,255,0.1); color: white; text-align: center; min-width: 150px;">
+                    <i data-lucide="clock" style="width: 32px; height: 32px; color: var(--accent); margin-bottom: 0.5rem;"></i>
+                    <p style="font-size: 2rem; font-weight: 700;">< 1 min</p>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">Response time</p>
+                </div>
+                <div class="card reveal" style="background: rgba(255,255,255,0.1); color: white; text-align: center; min-width: 150px;">
+                    <i data-lucide="moon" style="width: 32px; height: 32px; color: var(--accent); margin-bottom: 0.5rem;"></i>
+                    <p style="font-size: 2rem; font-weight: 700;">24/7</p>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">Always on</p>
+                </div>
+                <div class="card reveal" style="background: rgba(255,255,255,0.1); color: white; text-align: center; min-width: 150px;">
+                    <i data-lucide="dollar-sign" style="width: 32px; height: 32px; color: var(--accent); margin-bottom: 0.5rem;"></i>
+                    <p style="font-size: 2rem; font-weight: 700;">$0</p>
+                    <p style="opacity: 0.7; font-size: 0.9rem;">Monthly cost</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 22: NEXT STEPS
+         ============================================= -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <h2 class="reveal">What's <span class="accent">Next</span>?</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div class="card reveal">
+                    <div class="icon-box" style="margin-bottom: 1rem;">
+                        <i data-lucide="link" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3>Embed on Your Website</h3>
+                    <p style="color: var(--text-muted);">Add the form to your contact page for seamless lead capture</p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="icon-box" style="margin-bottom: 1rem;">
+                        <i data-lucide="bell" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3>Add Notifications</h3>
+                    <p style="color: var(--text-muted);">Get Slack or SMS alerts when new leads come in</p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="icon-box" style="margin-bottom: 1rem;">
+                        <i data-lucide="database" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3>Connect a CRM</h3>
+                    <p style="color: var(--text-muted);">Automatically add leads to HubSpot, Salesforce, or a spreadsheet</p>
+                </div>
+
+                <div class="card reveal">
+                    <div class="icon-box" style="margin-bottom: 1rem;">
+                        <i data-lucide="git-branch" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h3>Build More Automations</h3>
+                    <p style="color: var(--text-muted);">Follow-up sequences, appointment booking, and more</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SLIDE 23: CONTACT / THANK YOU
+         ============================================= -->
+    <section class="slide slide--title" data-section="end">
+        <div class="bg-gradient bg-gradient--purple" style="bottom: -200px; left: -200px;"></div>
+        <div class="slide-content" style="text-align: center;">
+            <h2 class="reveal" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Thank You!</h2>
+            <p class="reveal" style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 3rem;">Questions? Let's connect.</p>
+
+            <div class="reveal" style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <i data-lucide="globe" style="width: 20px; height: 20px; color: var(--accent);"></i>
+                    <span>poppymarketingandconsulting.com</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <i data-lucide="mail" style="width: 20px; height: 20px; color: var(--accent);"></i>
+                    <span>ricardo@poppymarketingandconsulting.com</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <i data-lucide="phone" style="width: 20px; height: 20px; color: var(--accent);"></i>
+                    <span>(941) 777-4933</span>
+                </div>
+            </div>
+
+            <div class="author reveal" style="justify-content: center; margin-top: 3rem;">
+                <div class="author-avatar">
+                    <i data-lucide="user" style="width: 28px; height: 28px;"></i>
+                </div>
+                <div class="author-info" style="text-align: left;">
+                    <h4>Ricardo Gattas-Moras</h4>
+                    <p>Poppy Marketing & Consulting</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>© 2025 Poppy Marketing & Consulting</span>
+            <span>UH SBDC Workshop</span>
+        </div>
+    </section>
+
+    <!-- =============================================
+         JAVASCRIPT
+         ============================================= -->
+    <script>
+        /* ===========================================
+           SLIDE PRESENTATION CONTROLLER
+           Handles navigation, animations, and interactions
+           =========================================== */
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.isAnimating = false;
+                this.hasInteracted = false;
+
+                this.init();
+            }
+
+            init() {
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupWheelNav();
+                this.setupTouchNav();
+                this.updateProgressBar();
+
+                // Initialize Lucide icons
+                lucide.createIcons();
+
+                // Start counter animations when visible
+                this.setupCounters();
+
+                // Hide keyboard hint after first interaction
+                setTimeout(() => {
+                    if (!this.hasInteracted) {
+                        document.getElementById('keyboardHint').classList.add('hidden');
+                    }
+                }, 8000);
+            }
+
+            createNavDots() {
+                const nav = document.getElementById('navDots');
+                const sections = new Set();
+
+                this.slides.forEach((slide, index) => {
+                    const dot = document.createElement('button');
+                    dot.className = 'nav-dot';
+                    dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+
+                    // Mark section starts
+                    if (slide.dataset.section) {
+                        dot.classList.add('section-start');
+                        sections.add(slide.dataset.section);
+                    }
+
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                    nav.appendChild(dot);
+                });
+
+                this.updateActiveDot();
+            }
+
+            setupIntersectionObserver() {
+                const options = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.5
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            this.currentSlide = Array.from(this.slides).indexOf(entry.target);
+                            this.updateActiveDot();
+                            this.updateProgressBar();
+                        }
+                    });
+                }, options);
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    this.hasInteracted = true;
+                    document.getElementById('keyboardHint').classList.add('hidden');
+
+                    switch(e.key) {
+                        case 'ArrowDown':
+                        case 'ArrowRight':
+                        case ' ':
+                        case 'PageDown':
+                            e.preventDefault();
+                            this.nextSlide();
+                            break;
+                        case 'ArrowUp':
+                        case 'ArrowLeft':
+                        case 'PageUp':
+                            e.preventDefault();
+                            this.prevSlide();
+                            break;
+                        case 'Home':
+                            e.preventDefault();
+                            this.goToSlide(0);
+                            break;
+                        case 'End':
+                            e.preventDefault();
+                            this.goToSlide(this.totalSlides - 1);
+                            break;
+                    }
+                });
+            }
+
+            setupWheelNav() {
+                let lastWheelTime = 0;
+                const wheelThreshold = 800;
+
+                document.addEventListener('wheel', (e) => {
+                    const now = Date.now();
+                    if (now - lastWheelTime < wheelThreshold) return;
+
+                    this.hasInteracted = true;
+                    document.getElementById('keyboardHint').classList.add('hidden');
+
+                    if (e.deltaY > 50) {
+                        this.nextSlide();
+                        lastWheelTime = now;
+                    } else if (e.deltaY < -50) {
+                        this.prevSlide();
+                        lastWheelTime = now;
+                    }
+                }, { passive: true });
+            }
+
+            setupTouchNav() {
+                let touchStartY = 0;
+                let touchEndY = 0;
+
+                document.addEventListener('touchstart', (e) => {
+                    touchStartY = e.touches[0].clientY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    touchEndY = e.changedTouches[0].clientY;
+                    const diff = touchStartY - touchEndY;
+
+                    if (Math.abs(diff) > 50) {
+                        this.hasInteracted = true;
+                        document.getElementById('keyboardHint').classList.add('hidden');
+
+                        if (diff > 0) {
+                            this.nextSlide();
+                        } else {
+                            this.prevSlide();
+                        }
+                    }
+                }, { passive: true });
+            }
+
+            nextSlide() {
+                if (this.currentSlide < this.totalSlides - 1) {
+                    this.goToSlide(this.currentSlide + 1);
+                }
+            }
+
+            prevSlide() {
+                if (this.currentSlide > 0) {
+                    this.goToSlide(this.currentSlide - 1);
+                }
+            }
+
+            goToSlide(index) {
+                if (index >= 0 && index < this.totalSlides) {
+                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            updateActiveDot() {
+                const dots = document.querySelectorAll('.nav-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+            }
+
+            updateProgressBar() {
+                const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
+                document.getElementById('progressBar').style.width = `${progress}%`;
+            }
+
+            setupCounters() {
+                const counters = document.querySelectorAll('.counter');
+
+                const observerOptions = {
+                    threshold: 0.5
+                };
+
+                const counterObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                            entry.target.classList.add('counted');
+                            this.animateCounter(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                counters.forEach(counter => counterObserver.observe(counter));
+            }
+
+            animateCounter(element) {
+                const target = parseInt(element.dataset.target);
+                const duration = 2000;
+                const start = performance.now();
+
+                const updateCounter = (currentTime) => {
+                    const elapsed = currentTime - start;
+                    const progress = Math.min(elapsed / duration, 1);
+
+                    // Easing function for smooth animation
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    const current = Math.floor(easeOutQuart * target);
+
+                    element.textContent = current;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        element.textContent = target;
+                    }
+                };
+
+                requestAnimationFrame(updateCounter);
+            }
+        }
+
+        // Initialize presentation when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new SlidePresentation();
+        });
+    </script>
+</body>
+</html>
