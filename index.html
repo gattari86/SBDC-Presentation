@@ -42,12 +42,12 @@
             /* Typography */
             --font-display: 'Poppins', sans-serif;
             --font-body: 'Raleway', sans-serif;
-            --fs-xs: 0.75rem;
-            --fs-sm: 0.85rem;
-            --fs-base: 1rem;
-            --fs-lg: 1.1rem;
-            --fs-xl: 1.25rem;
-            --fs-2xl: 1.5rem;
+            --fs-xs: 1.1rem;
+            --fs-sm: 1.15rem;
+            --fs-base: 1.25rem;
+            --fs-lg: 1.35rem;
+            --fs-xl: 1.5rem;
+            --fs-2xl: 1.75rem;
 
             /* Spacing Scale */
             --space-xs: 0.25rem;
@@ -196,7 +196,7 @@
             color: var(--accent);
             font-family: var(--font-display);
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: var(--fs-base);
             letter-spacing: 0.1em;
             text-transform: uppercase;
             margin-bottom: var(--space-lg);
@@ -226,7 +226,7 @@
 
         .slide--section .section-number {
             font-family: var(--font-display);
-            font-size: 0.9rem;
+            font-size: var(--fs-base);
             font-weight: 500;
             letter-spacing: 0.2em;
             text-transform: uppercase;
@@ -354,7 +354,7 @@
             border-radius: 100px;
             font-family: var(--font-display);
             font-weight: 500;
-            font-size: 0.8rem;
+            font-size: var(--fs-sm);
             margin-bottom: var(--space-md);
         }
 
@@ -415,7 +415,7 @@
 
         .step-content p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: var(--fs-sm);
         }
 
         /* =============================================================================
@@ -590,7 +590,7 @@
         }
 
         .timeline-point .label {
-            font-size: 0.8rem;
+            font-size: var(--fs-sm);
             color: var(--text-muted);
         }
 
@@ -612,7 +612,7 @@
 
         .troubleshoot-card h4 {
             color: var(--error);
-            font-size: var(--fs-sm);
+            font-size: var(--fs-base);
             margin-bottom: var(--space-sm);
             display: flex;
             align-items: center;
@@ -621,7 +621,7 @@
 
         .troubleshoot-card p {
             color: var(--success);
-            font-size: var(--fs-sm);
+            font-size: var(--fs-base);
         }
 
         /* =============================================================================
@@ -902,15 +902,48 @@
                 <img src="Poppy-brand-logo-white.png" alt="Poppy Marketing" style="width: 48px; height: 48px; object-fit: contain;">
                 <div>
                     <p style="font-weight: 600;">Ricardo Gattas-Moras</p>
-                    <p style="opacity: 0.7; font-size: 0.9rem;">Poppy Marketing & Consulting</p>
+                    <p style="opacity: 0.7; font-size: 1.15rem;">Poppy Marketing & Consulting</p>
                 </div>
             </div>
-            <p class="reveal" style="margin-top: 1.5rem; opacity: 0.6; font-size: 0.9rem;">University of Houston Small Business Development Center<br>2.5 Hours | Hands-On Workshop</p>
+            <p class="reveal" style="margin-top: 1.5rem; opacity: 0.6; font-size: 1.15rem;">University of Houston Small Business Development Center<br>2.5 Hours | Hands-On Workshop</p>
         </div>
         <div class="slide-footer"><span>© 2026 Poppy Marketing</span><span>poppymarketingandconsulting.com</span></div>
     </section>
 
-    <!-- SLIDE 2: WELCOME -->
+    <!-- PLACEHOLDER: SBDC will insert their disclaimer slide here before the About Me slide -->
+
+    <!-- SLIDE 2: ABOUT ME -->
+    <section class="slide slide--content" style="background: var(--warm-gray);">
+        <div class="slide-content">
+            <p class="eyebrow reveal" style="color: var(--accent);">ABOUT YOUR INSTRUCTOR</p>
+            <h2 class="reveal">Ricardo <span class="accent">Gattas-Moras</span></h2>
+            <div class="two-col reveal" style="margin-top: 2rem;">
+                <div>
+                    <p style="font-size: var(--fs-lg); font-weight: 600; margin-bottom: 0.75rem;">Founder — Poppy Marketing & Consulting</p>
+                    <ul class="feature-list" style="margin-top: 1rem;">
+                        <li><i data-lucide="building-2" style="width: 20px; height: 20px;"></i> Enterprise marketing & communications experience (Fortune 500)</li>
+                        <li><i data-lucide="cpu" style="width: 20px; height: 20px;"></i> Specialization: AI-powered automation, business systems, digital strategy</li>
+                        <li><i data-lucide="map-pin" style="width: 20px; height: 20px;"></i> Works with small businesses across Greater Houston</li>
+                    </ul>
+                    <div class="card card--lilac" style="margin-top: 1.5rem; font-style: italic;">
+                        <p>"I've built the exact system you're learning today — for real clients, generating real results."</p>
+                    </div>
+                </div>
+                <div class="card" style="text-align: center; padding: 2rem;">
+                    <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i data-lucide="user" style="width: 40px; height: 40px; color: white;"></i>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="mail" style="width: 18px; height: 18px; color: var(--accent);"></i><span>ricardo@poppymarketingandconsulting.com</span></div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="globe" style="width: 18px; height: 18px; color: var(--accent);"></i><span>poppymarketingandconsulting.com</span></div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="linkedin" style="width: 18px; height: 18px; color: var(--accent);"></i><span>linkedin.com/in/ricardogattas</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: WELCOME -->
     <section class="slide slide--content">
         <div class="slide-content">
             <p class="eyebrow reveal" style="color: var(--accent);">WELCOME</p>
@@ -1015,7 +1048,7 @@
             <p class="stat-number reveal" style="font-size: 2.5rem; display: inline;">%</p>
             <p class="stat-label reveal">of customers buy from the first responder</p>
             <p class="reveal" style="margin-top: 1.5rem; opacity: 0.8;">Speed isn't just nice—it's the difference between winning and losing.</p>
-            <p class="reveal" style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.5;">Source: Lead Response Management Study</p>
+            <p class="reveal" style="margin-top: 1rem; font-size: 1.15rem; opacity: 0.5;">Source: Lead Response Management Study</p>
         </div>
     </section>
 
@@ -1026,10 +1059,10 @@
             <h2 class="reveal">The <span class="accent">Reality</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">You're busy running your business.</p>
             <div class="four-col reveal">
-                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="users" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Client meeting</p><p style="font-size: 0.8rem; color: var(--text-muted);">Client calls come first</p></div>
-                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="wrench" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Project deadline</p><p style="font-size: 0.8rem; color: var(--text-muted);">Projects need finishing</p></div>
-                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="dollar-sign" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Invoice follow-up</p><p style="font-size: 0.8rem; color: var(--text-muted);">Bills need paying</p></div>
-                <div class="card" style="text-align: center; background: #FEF3C7; border: 2px solid #F59E0B;"><div class="icon-box" style="margin: 0 auto 0.75rem; background: #FEF3C7;"><i data-lucide="alert-triangle" style="width: 24px; height: 24px; color: #F59E0B;"></i></div><p style="font-weight: 600; color: #B45309;">New lead waiting...</p><p style="font-size: 0.8rem; color: #92400E;">Staff needs managing</p></div>
+                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="users" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Client meeting</p><p style="font-size: 1.15rem; color: var(--text-muted);">Client calls come first</p></div>
+                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="wrench" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Project deadline</p><p style="font-size: 1.15rem; color: var(--text-muted);">Projects need finishing</p></div>
+                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="dollar-sign" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Invoice follow-up</p><p style="font-size: 1.15rem; color: var(--text-muted);">Bills need paying</p></div>
+                <div class="card" style="text-align: center; background: #FEF3C7; border: 2px solid #F59E0B;"><div class="icon-box" style="margin: 0 auto 0.75rem; background: #FEF3C7;"><i data-lucide="alert-triangle" style="width: 24px; height: 24px; color: #F59E0B;"></i></div><p style="font-weight: 600; color: #B45309;">New lead waiting...</p><p style="font-size: 1.15rem; color: #92400E;">Staff needs managing</p></div>
             </div>
         </div>
     </section>
@@ -1040,10 +1073,10 @@
             <p class="eyebrow reveal" style="color: var(--accent);">THE PROBLEM</p>
             <h2 class="reveal">What Actually <span class="accent">Happens</span></h2>
             <div class="timeline reveal">
-                <div class="timeline-point"><p class="time" style="color: #22C55E;">0:00</p><p class="label">Lead Submits</p><p style="font-size: 0.75rem; color: #22C55E;">Excited, ready to buy</p></div>
-                <div class="timeline-point"><p class="time" style="color: #F59E0B;">+4 hours</p><p class="label">You See It</p><p style="font-size: 0.75rem; color: #F59E0B;">Between meetings</p></div>
-                <div class="timeline-point"><p class="time" style="color: #EF4444;">+6 hours</p><p class="label">You Respond</p><p style="font-size: 0.75rem; color: #EF4444;">Finally have a moment</p></div>
-                <div class="timeline-point"><p class="time" style="color: #7F1D1D;">Too Late</p><p class="label">Already Gone</p><p style="font-size: 0.75rem; color: #7F1D1D;">Called your competitor</p></div>
+                <div class="timeline-point"><p class="time" style="color: #22C55E;">0:00</p><p class="label">Lead Submits</p><p style="font-size: 1.1rem; color: #22C55E;">Excited, ready to buy</p></div>
+                <div class="timeline-point"><p class="time" style="color: #F59E0B;">+4 hours</p><p class="label">You See It</p><p style="font-size: 1.1rem; color: #F59E0B;">Between meetings</p></div>
+                <div class="timeline-point"><p class="time" style="color: #EF4444;">+6 hours</p><p class="label">You Respond</p><p style="font-size: 1.1rem; color: #EF4444;">Finally have a moment</p></div>
+                <div class="timeline-point"><p class="time" style="color: #7F1D1D;">Too Late</p><p class="label">Already Gone</p><p style="font-size: 1.1rem; color: #7F1D1D;">Called your competitor</p></div>
             </div>
             <p class="reveal" style="text-align: center; margin-top: 1rem; font-size: 1.1rem; color: #DC2626; font-weight: 600;">They've already moved on.</p>
         </div>
@@ -1055,15 +1088,15 @@
             <p class="eyebrow reveal" style="color: var(--accent);">THE PROBLEM</p>
             <h2 class="reveal">The Real <span class="accent">Cost</span></h2>
             <div class="card reveal" style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">LOST REVENUE</p>
+                <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 1rem;">LOST REVENUE</p>
                 <p style="font-size: 4rem; font-weight: 700; color: #DC2626; font-family: var(--font-display);">$240K</p>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem;">per year</p>
                 <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                    <div style="text-align: center;"><p style="font-weight: 600;">$2,000</p><p style="font-size: 0.8rem; color: var(--text-muted);">Average Project</p></div>
+                    <div style="text-align: center;"><p style="font-weight: 600;">$2,000</p><p style="font-size: 1.15rem; color: var(--text-muted);">Average Project</p></div>
                     <span style="font-size: 1.5rem;">×</span>
-                    <div style="text-align: center;"><p style="font-weight: 600;">10</p><p style="font-size: 0.8rem; color: var(--text-muted);">Lost Leads/Month</p></div>
+                    <div style="text-align: center;"><p style="font-weight: 600;">10</p><p style="font-size: 1.15rem; color: var(--text-muted);">Lost Leads/Month</p></div>
                     <span style="font-size: 1.5rem;">×</span>
-                    <div style="text-align: center;"><p style="font-weight: 600;">12</p><p style="font-size: 0.8rem; color: var(--text-muted);">Months</p></div>
+                    <div style="text-align: center;"><p style="font-weight: 600;">12</p><p style="font-size: 1.15rem; color: var(--text-muted);">Months</p></div>
                 </div>
             </div>
             <p class="reveal" style="text-align: center; margin-top: 1.5rem; color: var(--text-muted);">Even at half this rate, that's a new employee or major investment.</p>
@@ -1129,10 +1162,10 @@
             <p class="eyebrow reveal" style="color: var(--accent);">SYSTEM OVERVIEW</p>
             <h2 class="reveal">The <span class="accent">Components</span></h2>
             <div class="four-col reveal" style="margin-top: 2rem;">
-                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="file-text" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Google Forms</p><p style="font-size: 1.25rem; font-weight: 700; color: #16A34A;">FREE</p><p style="font-size: 0.8rem; color: var(--text-muted);">Lead capture</p></div>
-                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="zap" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Make.com</p><p style="font-size: 1.25rem; font-weight: 700; color: #16A34A;">FREE</p><p style="font-size: 0.8rem; color: var(--text-muted);">1,000 ops/month</p></div>
-                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="mail" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Gmail</p><p style="font-size: 1.25rem; font-weight: 700; color: #16A34A;">FREE</p><p style="font-size: 0.8rem; color: var(--text-muted);">Send responses</p></div>
-                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="brain" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">OpenAI</p><p style="font-size: 1.25rem; font-weight: 700; color: var(--accent);">~$5/mo</p><p style="font-size: 0.8rem; color: var(--text-muted);">Optional upgrade</p></div>
+                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="file-text" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Google Forms</p><p style="font-size: 1.25rem; font-weight: 700; color: #16A34A;">FREE</p><p style="font-size: 1.15rem; color: var(--text-muted);">Lead capture</p></div>
+                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="zap" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Make.com</p><p style="font-size: 1.25rem; font-weight: 700; color: #16A34A;">FREE</p><p style="font-size: 1.15rem; color: var(--text-muted);">1,000 ops/month</p></div>
+                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="mail" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">Gmail</p><p style="font-size: 1.25rem; font-weight: 700; color: #16A34A;">FREE</p><p style="font-size: 1.15rem; color: var(--text-muted);">Send responses</p></div>
+                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 0.75rem;"><i data-lucide="brain" style="width: 24px; height: 24px;"></i></div><p style="font-weight: 600;">OpenAI</p><p style="font-size: 1.25rem; font-weight: 700; color: var(--accent);">~$5/mo</p><p style="font-size: 1.15rem; color: var(--text-muted);">Optional upgrade</p></div>
             </div>
         </div>
     </section>
@@ -1144,10 +1177,10 @@
             <h2 class="reveal">Make.com <span class="accent">Free Tier</span></h2>
             <div class="two-col reveal" style="margin-top: 2rem;">
                 <div class="card" style="text-align: center;">
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">WHAT YOU GET FREE</p>
+                    <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 0.5rem;">WHAT YOU GET FREE</p>
                     <p style="font-size: 4rem; font-weight: 700; color: var(--accent); font-family: var(--font-display);">1,000</p>
                     <p style="font-size: 1.25rem;">operations/month</p>
-                    <p style="margin-top: 1rem; padding: 0.75rem; background: var(--soft-lilac); border-radius: 8px; font-size: 0.9rem;">≈ 200 leads per month on the free plan</p>
+                    <p style="margin-top: 1rem; padding: 0.75rem; background: var(--soft-lilac); border-radius: 8px; font-size: 1.15rem;">≈ 200 leads per month on the free plan</p>
                 </div>
                 <div>
                     <ul class="feature-list">
@@ -1158,10 +1191,44 @@
                     </ul>
                 </div>
             </div>
+            <div class="card reveal" style="margin-top: 1.5rem; background: #FEF3C7; border: 2px solid #F59E0B; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <h3 style="color: #B45309;"><i data-lucide="trending-up" style="width: 18px; height: 18px;"></i> When to Upgrade</h3>
+                <p><strong>Trigger:</strong> If you consistently receive 150+ leads/month</p>
+                <p style="margin-top: 0.5rem;"><strong>Cost:</strong> Starts at ~$9/month for 10,000 operations</p>
+                <p style="margin-top: 0.5rem; color: #166534; font-weight: 500;">You do NOT need to upgrade today — the free tier handles most small businesses.</p>
+            </div>
         </div>
     </section>
 
-    <!-- SLIDE 16: PHASE 1A SECTION -->
+    <!-- SLIDE: DATA PRIVACY -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <p class="eyebrow reveal" style="color: var(--accent);">IMPORTANT</p>
+            <h2 class="reveal">Your Data, Your <span class="accent">Control</span></h2>
+            <p class="reveal" style="margin-bottom: 1.5rem; color: var(--text-muted);">Here's how each tool handles your data:</p>
+            <div class="four-col reveal" style="margin-top: 1.5rem;">
+                <div class="card">
+                    <h3><i data-lucide="file-text" style="width: 18px; height: 18px;"></i> Google Forms/Sheets</h3>
+                    <p>Data stored in YOUR Google account. You control access. Only you and anyone you explicitly share with can see it.</p>
+                </div>
+                <div class="card">
+                    <h3><i data-lucide="zap" style="width: 18px; height: 18px;"></i> Make.com</h3>
+                    <p>Processes data but doesn't store lead info long-term. Data passes through during automation execution.</p>
+                </div>
+                <div class="card">
+                    <h3><i data-lucide="brain" style="width: 18px; height: 18px;"></i> OpenAI (Phase 2)</h3>
+                    <p>Data sent to API for processing. API data is NOT used for model training (current policy). Be mindful of what you send.</p>
+                </div>
+                <div class="card" style="background: var(--soft-lilac);">
+                    <h3><i data-lucide="shield" style="width: 18px; height: 18px;"></i> Best Practice</h3>
+                    <p>Only collect what you need. Don't store sensitive data (SSN, payment info) in these tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENTER NOTE: PACE CHECK — Slow down here. Participants are about to start building. -->
+    <!-- SLIDE: PHASE 1A SECTION -->
     <section class="slide slide--section">
         <div class="slide-content">
             <p class="section-number reveal">PHASE 1A</p>
@@ -1175,7 +1242,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Phase 1A</div>
-            <h2 class="reveal">Create a New Google Form <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">1</span></h2>
+            <h2 class="reveal">Create a New Google Form <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">1</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">Start with a blank form - we'll customize it for lead capture.</p>
             <div class="two-col reveal">
                 <ul class="feature-list">
@@ -1184,24 +1251,72 @@
                     <li><i data-lucide="align-left" style="width: 18px; height: 18px;"></i> Add a description (optional but recommended)</li>
                 </ul>
                 <div class="card" style="background: var(--warm-gray); text-align: center; padding: 2rem;">
-                    <p style="font-size: 0.8rem; color: var(--text-muted);">Untitled form</p>
-                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Form description</p>
-                    <div style="margin-top: 1rem; padding: 1rem; background: white; border-radius: 8px;"><p style="font-size: 0.8rem; color: var(--text-muted);">Question 1</p></div>
+                    <p style="font-size: 1.15rem; color: var(--text-muted);">Untitled form</p>
+                    <p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem;">Form description</p>
+                    <div style="margin-top: 1rem; padding: 1rem; background: white; border-radius: 8px;"><p style="font-size: 1.15rem; color: var(--text-muted);">Question 1</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SLIDE 18: ESSENTIAL FIELDS -->
+    <!-- SLIDE 18a: ESSENTIAL FIELDS — Name + Email -->
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="list" style="width: 14px; height: 14px;"></i> Phase 1A</div>
-            <h2 class="reveal">Essential Fields (Required) <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">2</span></h2>
-            <div class="four-col reveal" style="margin-top: 1.5rem;">
-                <div class="card"><h3><i data-lucide="user" style="width: 18px; height: 18px;"></i> Full Name</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Short answer</p><p style="font-size: 0.8rem; color: #DC2626; font-weight: 500;">Required</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Toggle "Required" on</p></div>
-                <div class="card"><h3><i data-lucide="mail" style="width: 18px; height: 18px;"></i> Email</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Short answer</p><p style="font-size: 0.8rem; color: #DC2626; font-weight: 500;">Required</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Email validation</p></div>
-                <div class="card"><h3><i data-lucide="phone" style="width: 18px; height: 18px;"></i> Phone</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Short answer</p><p style="font-size: 0.8rem; color: #DC2626; font-weight: 500;">Required</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">For follow-up</p></div>
-                <div class="card"><h3><i data-lucide="briefcase" style="width: 18px; height: 18px;"></i> Service</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Dropdown</p><p style="font-size: 0.8rem; color: #DC2626; font-weight: 500;">Required</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Your categories</p></div>
+            <h2 class="reveal">Essential Fields: Name & Email <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">2a</span></h2>
+            <p class="reveal" style="margin-bottom: 1.5rem; color: var(--text-muted);">Let's add fields one at a time. Start with these two:</p>
+            <div class="two-col reveal" style="margin-top: 1.5rem;">
+                <div class="card" style="border: 2px solid var(--accent);">
+                    <h3><i data-lucide="user" style="width: 18px; height: 18px;"></i> Full Name</h3>
+                    <ul class="feature-list" style="margin-top: 0.75rem;">
+                        <li><i data-lucide="mouse-pointer-click" style="width: 16px; height: 16px;"></i> Click "+" to add a question</li>
+                        <li><i data-lucide="type" style="width: 16px; height: 16px;"></i> Type: <strong>Short answer</strong></li>
+                        <li><i data-lucide="toggle-right" style="width: 16px; height: 16px;"></i> Toggle <strong>"Required"</strong> ON</li>
+                    </ul>
+                </div>
+                <div class="card" style="border: 2px solid var(--accent);">
+                    <h3><i data-lucide="mail" style="width: 18px; height: 18px;"></i> Email Address</h3>
+                    <ul class="feature-list" style="margin-top: 0.75rem;">
+                        <li><i data-lucide="mouse-pointer-click" style="width: 16px; height: 16px;"></i> Click "+" to add another question</li>
+                        <li><i data-lucide="type" style="width: 16px; height: 16px;"></i> Type: <strong>Short answer</strong></li>
+                        <li><i data-lucide="toggle-right" style="width: 16px; height: 16px;"></i> Toggle <strong>"Required"</strong> ON</li>
+                        <li><i data-lucide="check-circle" style="width: 16px; height: 16px;"></i> Enable <strong>email validation</strong> in settings</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card card--lilac reveal" style="margin-top: 1.5rem; text-align: center;">
+                <p><strong>Try it now!</strong> Add both fields, then look up when you're ready.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 18b: ESSENTIAL FIELDS — Phone + Service -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <div class="phase-badge reveal"><i data-lucide="list" style="width: 14px; height: 14px;"></i> Phase 1A</div>
+            <h2 class="reveal">Essential Fields: Phone & Service <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">2b</span></h2>
+            <p class="reveal" style="margin-bottom: 1.5rem; color: var(--text-muted);">Now add these two. The Service field uses a dropdown:</p>
+            <div class="two-col reveal" style="margin-top: 1.5rem;">
+                <div class="card" style="border: 2px solid var(--accent);">
+                    <h3><i data-lucide="phone" style="width: 18px; height: 18px;"></i> Phone Number</h3>
+                    <ul class="feature-list" style="margin-top: 0.75rem;">
+                        <li><i data-lucide="mouse-pointer-click" style="width: 16px; height: 16px;"></i> Click "+" to add a question</li>
+                        <li><i data-lucide="type" style="width: 16px; height: 16px;"></i> Type: <strong>Short answer</strong></li>
+                        <li><i data-lucide="toggle-right" style="width: 16px; height: 16px;"></i> Toggle <strong>"Required"</strong> ON</li>
+                    </ul>
+                </div>
+                <div class="card" style="border: 2px solid var(--accent);">
+                    <h3><i data-lucide="briefcase" style="width: 18px; height: 18px;"></i> Service Interested In</h3>
+                    <ul class="feature-list" style="margin-top: 0.75rem;">
+                        <li><i data-lucide="mouse-pointer-click" style="width: 16px; height: 16px;"></i> Click "+" to add a question</li>
+                        <li><i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i> Type: <strong>Dropdown</strong></li>
+                        <li><i data-lucide="list" style="width: 16px; height: 16px;"></i> Add your service categories as options</li>
+                        <li><i data-lucide="toggle-right" style="width: 16px; height: 16px;"></i> Toggle <strong>"Required"</strong> ON</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card card--lilac reveal" style="margin-top: 1.5rem; text-align: center;">
+                <p><strong>Try it now!</strong> Add both fields. Your form should now have 4 questions total.</p>
             </div>
         </div>
     </section>
@@ -1213,10 +1328,10 @@
             <h2 class="reveal">Optional Fields <span class="accent">(Add Later)</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem; color: var(--text-muted);">Don't overcomplicate - these can be added once basic system works</p>
             <div class="four-col reveal">
-                <div class="card" style="opacity: 0.8;"><h3><i data-lucide="dollar-sign" style="width: 18px; height: 18px;"></i> Budget Range</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Dropdown</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Helps qualify leads</p></div>
-                <div class="card" style="opacity: 0.8;"><h3><i data-lucide="calendar" style="width: 18px; height: 18px;"></i> Timeline</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Multiple choice</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">ASAP, 1 week, 1 month</p></div>
-                <div class="card" style="opacity: 0.8;"><h3><i data-lucide="search" style="width: 18px; height: 18px;"></i> How did you hear?</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Dropdown</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Track marketing ROI</p></div>
-                <div class="card" style="opacity: 0.8;"><h3><i data-lucide="message-square" style="width: 18px; height: 18px;"></i> Additional Info</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Paragraph</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Open-ended details</p></div>
+                <div class="card" style="opacity: 0.8;"><h3><i data-lucide="dollar-sign" style="width: 18px; height: 18px;"></i> Budget Range</h3><p style="font-size: 1.15rem; color: var(--text-muted);">Dropdown</p><p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem;">Helps qualify leads</p></div>
+                <div class="card" style="opacity: 0.8;"><h3><i data-lucide="calendar" style="width: 18px; height: 18px;"></i> Timeline</h3><p style="font-size: 1.15rem; color: var(--text-muted);">Multiple choice</p><p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem;">ASAP, 1 week, 1 month</p></div>
+                <div class="card" style="opacity: 0.8;"><h3><i data-lucide="search" style="width: 18px; height: 18px;"></i> How did you hear?</h3><p style="font-size: 1.15rem; color: var(--text-muted);">Dropdown</p><p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem;">Track marketing ROI</p></div>
+                <div class="card" style="opacity: 0.8;"><h3><i data-lucide="message-square" style="width: 18px; height: 18px;"></i> Additional Info</h3><p style="font-size: 1.15rem; color: var(--text-muted);">Paragraph</p><p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem;">Open-ended details</p></div>
             </div>
         </div>
     </section>
@@ -1225,7 +1340,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="settings" style="width: 14px; height: 14px;"></i> Phase 1A</div>
-            <h2 class="reveal">Form Settings <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">3</span></h2>
+            <h2 class="reveal">Form Settings <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">3</span></h2>
             <div class="two-col reveal" style="margin-top: 1.5rem;">
                 <div>
                     <p style="margin-bottom: 1rem;">Click the <strong>Settings</strong> tab (next to Questions and Responses)</p>
@@ -1249,21 +1364,22 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="table" style="width: 14px; height: 14px;"></i> Phase 1A</div>
-            <h2 class="reveal">Connect to Google Sheets <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">4</span></h2>
+            <h2 class="reveal">Connect to Google Sheets <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">4</span></h2>
             <div class="flow reveal" style="margin: 1.5rem 0;">
                 <div class="flow-item"><i data-lucide="file-text" style="width: 28px; height: 28px;"></i><p><strong>Google Form</strong></p></div>
                 <i data-lucide="arrow-right" class="flow-arrow" style="width: 24px; height: 24px;"></i>
                 <div class="flow-item" style="border: 2px solid var(--accent);"><i data-lucide="table" style="width: 28px; height: 28px;"></i><p><strong>Google Sheets</strong></p></div>
             </div>
             <div class="four-col reveal">
-                <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.5rem;">1</div><p style="font-size: 0.9rem;">Click "Responses" tab</p></div>
-                <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.5rem;">2</div><p style="font-size: 0.9rem;">Click green Sheets icon</p></div>
-                <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.5rem;">3</div><p style="font-size: 0.9rem;">Select "Create new spreadsheet"</p></div>
-                <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.5rem;">4</div><p style="font-size: 0.9rem;">Click "Create"</p></div>
+                <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.5rem;">1</div><p style="font-size: 1.15rem;">Click "Responses" tab</p></div>
+                <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.5rem;">2</div><p style="font-size: 1.15rem;">Click green Sheets icon</p></div>
+                <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.5rem;">3</div><p style="font-size: 1.15rem;">Select "Create new spreadsheet"</p></div>
+                <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.5rem;">4</div><p style="font-size: 1.15rem;">Click "Create"</p></div>
             </div>
         </div>
     </section>
 
+    <!-- PRESENTER NOTE: PAUSE — Ask if anyone needs help before moving on. -->
     <!-- SLIDE 22: CHECKPOINT 1A -->
     <section class="slide slide--content" style="background: #DCFCE7;">
         <div class="slide-content" style="text-align: center;">
@@ -1279,6 +1395,7 @@
         </div>
     </section>
 
+    <!-- PRESENTER NOTE: PACE CHECK — Slow down here. New tool introduction (Make.com). -->
     <!-- SLIDE 23: PHASE 1B SECTION -->
     <section class="slide slide--section">
         <div class="slide-content">
@@ -1293,7 +1410,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="user-plus" style="width: 14px; height: 14px;"></i> Phase 1B</div>
-            <h2 class="reveal">Create Your Free Account <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">1</span></h2>
+            <h2 class="reveal">Create Your Free Account <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">1</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">Sign up with Google for the fastest setup.</p>
             <div class="two-col reveal">
                 <div class="steps">
@@ -1318,7 +1435,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="git-branch" style="width: 14px; height: 14px;"></i> Phase 1B</div>
-            <h2 class="reveal">Create a New Scenario <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">2</span></h2>
+            <h2 class="reveal">Create a New Scenario <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">2</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">A "scenario" is Make.com's term for an automation workflow.</p>
             <div class="two-col reveal">
                 <div class="steps">
@@ -1338,7 +1455,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="table" style="width: 14px; height: 14px;"></i> Phase 1B</div>
-            <h2 class="reveal">Add Google Sheets Trigger <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">3</span></h2>
+            <h2 class="reveal">Add Google Sheets Trigger <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">3</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">The trigger starts your automation when a new form response arrives.</p>
             <div class="two-col reveal">
                 <div class="steps">
@@ -1360,12 +1477,12 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="settings" style="width: 14px; height: 14px;"></i> Phase 1B</div>
-            <h2 class="reveal">Configure the Trigger <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">4</span></h2>
+            <h2 class="reveal">Configure the Trigger <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">4</span></h2>
             <div class="four-col reveal" style="margin-top: 2rem;">
-                <div class="card"><p style="font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Step 1</p><h4>Connection</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Click "Add" and sign in with Google</p></div>
-                <div class="card"><p style="font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Step 2</p><h4>Spreadsheet</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Select your form responses sheet</p></div>
-                <div class="card"><p style="font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Step 3</p><h4>Sheet Name</h4><p style="font-size: 0.85rem; color: var(--text-muted);">"Form Responses 1"</p></div>
-                <div class="card"><p style="font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Step 4</p><h4>Limit</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Leave as default (1)</p></div>
+                <div class="card"><p style="font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Step 1</p><h4>Connection</h4><p style="font-size: 1.15rem; color: var(--text-muted);">Click "Add" and sign in with Google</p></div>
+                <div class="card"><p style="font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Step 2</p><h4>Spreadsheet</h4><p style="font-size: 1.15rem; color: var(--text-muted);">Select your form responses sheet</p></div>
+                <div class="card"><p style="font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Step 3</p><h4>Sheet Name</h4><p style="font-size: 1.15rem; color: var(--text-muted);">"Form Responses 1"</p></div>
+                <div class="card"><p style="font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Step 4</p><h4>Limit</h4><p style="font-size: 1.15rem; color: var(--text-muted);">Leave as default (1)</p></div>
             </div>
         </div>
     </section>
@@ -1374,7 +1491,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="play" style="width: 14px; height: 14px;"></i> Phase 1B</div>
-            <h2 class="reveal">Test the Connection <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">5</span></h2>
+            <h2 class="reveal">Test the Connection <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">5</span></h2>
             <div class="two-col reveal" style="margin-top: 2rem;">
                 <div class="card card--lilac" style="text-align: center; padding: 2rem;">
                     <p style="font-size: 1.1rem;">Click <strong>"Run Once"</strong> in the bottom left</p>
@@ -1397,9 +1514,9 @@
             <p class="eyebrow reveal" style="color: var(--accent);">UNDERSTANDING</p>
             <h2 class="reveal">How the Trigger <span class="accent">Works</span></h2>
             <div class="three-col reveal" style="margin-top: 2rem;">
-                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 1rem; width: 56px; height: 56px;"><i data-lucide="eye" style="width: 28px; height: 28px;"></i></div><h3 style="justify-content: center;">Watch</h3><p style="font-size: 0.9rem; color: var(--text-muted);">Make.com checks your sheet every 15 min (polling, not instant)</p></div>
-                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 1rem; width: 56px; height: 56px;"><i data-lucide="search" style="width: 28px; height: 28px;"></i></div><h3 style="justify-content: center;">Detect</h3><p style="font-size: 0.9rem; color: var(--text-muted);">When a new row appears, it triggers the scenario</p></div>
-                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 1rem; width: 56px; height: 56px;"><i data-lucide="cog" style="width: 28px; height: 28px;"></i></div><h3 style="justify-content: center;">Process</h3><p style="font-size: 0.9rem; color: var(--text-muted);">The row data becomes available for your next actions</p></div>
+                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 1rem; width: 56px; height: 56px;"><i data-lucide="eye" style="width: 28px; height: 28px;"></i></div><h3 style="justify-content: center;">Watch</h3><p style="font-size: 1.15rem; color: var(--text-muted);">Make.com checks your sheet every 15 min (polling, not instant)</p></div>
+                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 1rem; width: 56px; height: 56px;"><i data-lucide="search" style="width: 28px; height: 28px;"></i></div><h3 style="justify-content: center;">Detect</h3><p style="font-size: 1.15rem; color: var(--text-muted);">When a new row appears, it triggers the scenario</p></div>
+                <div class="card" style="text-align: center;"><div class="icon-box" style="margin: 0 auto 1rem; width: 56px; height: 56px;"><i data-lucide="cog" style="width: 28px; height: 28px;"></i></div><h3 style="justify-content: center;">Process</h3><p style="font-size: 1.15rem; color: var(--text-muted);">The row data becomes available for your next actions</p></div>
             </div>
         </div>
     </section>
@@ -1432,13 +1549,14 @@
                 <h2>Common Errors <span class="accent">(Don't Panic!)</span></h2>
             </div>
             <div class="troubleshoot-grid reveal">
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "No data found"</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Sheet has no new rows since connection</p><p>✓ Fix: Submit a test form response first</p></div>
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Authorization failed"</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Google permissions issue</p><p>✓ Fix: Re-authorize the connection</p></div>
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Sheet not found"</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Wrong spreadsheet selected</p><p>✓ Fix: Check sheet name is exact</p></div>
+                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "No data found"</h4><p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 0.5rem;">Sheet has no new rows since connection</p><p>✓ Fix: Submit a test form response first</p></div>
+                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Authorization failed"</h4><p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 0.5rem;">Google permissions issue</p><p>✓ Fix: Re-authorize the connection</p></div>
+                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Sheet not found"</h4><p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 0.5rem;">Wrong spreadsheet selected</p><p>✓ Fix: Check sheet name is exact</p></div>
             </div>
         </div>
     </section>
 
+    <!-- PRESENTER NOTE: PAUSE — Ask if anyone needs help before moving on. -->
     <!-- SLIDE 32: CHECKPOINT 1B -->
     <section class="slide slide--content" style="background: #DCFCE7;">
         <div class="slide-content" style="text-align: center;">
@@ -1454,6 +1572,7 @@
         </div>
     </section>
 
+    <!-- PRESENTER NOTE: PACE CHECK — Slow down here. Email configuration is the trickiest part. -->
     <!-- SLIDE 33: PHASE 1C SECTION -->
     <section class="slide slide--section">
         <div class="slide-content">
@@ -1467,7 +1586,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="mail" style="width: 14px; height: 14px;"></i> Phase 1C</div>
-            <h2 class="reveal">Add Gmail Module <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">1</span></h2>
+            <h2 class="reveal">Add Gmail Module <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">1</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">Connect Gmail to send automatic responses to leads.</p>
             <div class="two-col reveal">
                 <div class="steps">
@@ -1489,12 +1608,12 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="settings" style="width: 14px; height: 14px;"></i> Phase 1C</div>
-            <h2 class="reveal">Configure Email Settings <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">2</span></h2>
+            <h2 class="reveal">Configure Email Settings <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">2</span></h2>
             <div class="four-col reveal" style="margin-top: 2rem;">
-                <div class="card"><h4 style="color: var(--accent);">To</h4><p style="font-size: 0.85rem;">Click the field, then select "Email" from Sheets data</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">This pulls the lead's email</p></div>
-                <div class="card"><h4 style="color: var(--accent);">Subject</h4><p style="font-size: 0.85rem;">"Thanks for contacting [Your Business]!"</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Make it personal</p></div>
-                <div class="card"><h4 style="color: var(--accent);">Content Type</h4><p style="font-size: 0.85rem;">Select "Plain text" (easiest)</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">HTML optional</p></div>
-                <div class="card"><h4 style="color: var(--accent);">Content</h4><p style="font-size: 0.85rem;">Write your response template</p><p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Next slide...</p></div>
+                <div class="card"><h4 style="color: var(--accent);">To</h4><p style="font-size: 1.15rem;">Click the field, then select "Email" from Sheets data</p><p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem;">This pulls the lead's email</p></div>
+                <div class="card"><h4 style="color: var(--accent);">Subject</h4><p style="font-size: 1.15rem;">"Thanks for contacting [Your Business]!"</p><p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem;">Make it personal</p></div>
+                <div class="card"><h4 style="color: var(--accent);">Content Type</h4><p style="font-size: 1.15rem;">Select "Plain text" (easiest)</p><p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem;">HTML optional</p></div>
+                <div class="card"><h4 style="color: var(--accent);">Content</h4><p style="font-size: 1.15rem;">Write your response template</p><p style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem;">Next slide...</p></div>
             </div>
         </div>
     </section>
@@ -1503,13 +1622,13 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="link" style="width: 14px; height: 14px;"></i> Phase 1C</div>
-            <h2 class="reveal">Map Form Data to Email <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">3</span></h2>
+            <h2 class="reveal">Map Form Data to Email <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">3</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">Click any field in the email and select data from Google Sheets to personalize:</p>
             <div class="four-col reveal">
-                <div class="card" style="text-align: center;"><p style="font-family: monospace; color: var(--accent); margin-bottom: 0.5rem;">{{Full Name}}</p><i data-lucide="arrow-down" style="width: 20px; height: 20px; color: var(--text-muted);"></i><p style="font-size: 0.85rem; margin-top: 0.5rem;">"Hi {{Name}},"</p></div>
-                <div class="card" style="text-align: center;"><p style="font-family: monospace; color: var(--accent); margin-bottom: 0.5rem;">{{Service}}</p><i data-lucide="arrow-down" style="width: 20px; height: 20px; color: var(--text-muted);"></i><p style="font-size: 0.85rem; margin-top: 0.5rem;">"...about {{Service}}..."</p></div>
-                <div class="card" style="text-align: center;"><p style="font-family: monospace; color: var(--accent); margin-bottom: 0.5rem;">{{Email}}</p><i data-lucide="arrow-down" style="width: 20px; height: 20px; color: var(--text-muted);"></i><p style="font-size: 0.85rem; margin-top: 0.5rem;">To: field</p></div>
-                <div class="card" style="text-align: center;"><p style="font-family: monospace; color: var(--accent); margin-bottom: 0.5rem;">{{Phone}}</p><i data-lucide="arrow-down" style="width: 20px; height: 20px; color: var(--text-muted);"></i><p style="font-size: 0.85rem; margin-top: 0.5rem;">Optional: CC yourself</p></div>
+                <div class="card" style="text-align: center;"><p style="font-family: monospace; color: var(--accent); margin-bottom: 0.5rem;">{{Full Name}}</p><i data-lucide="arrow-down" style="width: 20px; height: 20px; color: var(--text-muted);"></i><p style="font-size: 1.15rem; margin-top: 0.5rem;">"Hi {{Name}},"</p></div>
+                <div class="card" style="text-align: center;"><p style="font-family: monospace; color: var(--accent); margin-bottom: 0.5rem;">{{Service}}</p><i data-lucide="arrow-down" style="width: 20px; height: 20px; color: var(--text-muted);"></i><p style="font-size: 1.15rem; margin-top: 0.5rem;">"...about {{Service}}..."</p></div>
+                <div class="card" style="text-align: center;"><p style="font-family: monospace; color: var(--accent); margin-bottom: 0.5rem;">{{Email}}</p><i data-lucide="arrow-down" style="width: 20px; height: 20px; color: var(--text-muted);"></i><p style="font-size: 1.15rem; margin-top: 0.5rem;">To: field</p></div>
+                <div class="card" style="text-align: center;"><p style="font-family: monospace; color: var(--accent); margin-bottom: 0.5rem;">{{Phone}}</p><i data-lucide="arrow-down" style="width: 20px; height: 20px; color: var(--text-muted);"></i><p style="font-size: 1.15rem; margin-top: 0.5rem;">Optional: CC yourself</p></div>
             </div>
             <div class="card card--lilac reveal" style="margin-top: 1.5rem; text-align: center;">
                 <p><strong>Pro tip:</strong> Click the field, then click the data bubble from the Google Sheets module</p>
@@ -1523,7 +1642,7 @@
             <p class="eyebrow reveal" style="color: var(--accent);">EMAIL TEMPLATE</p>
             <h2 class="reveal">Sample Response <span class="accent">Email</span></h2>
             <div class="two-col reveal" style="margin-top: 1.5rem;">
-                <div class="card card--dark" style="font-family: monospace; font-size: 0.9rem; line-height: 1.8;">
+                <div class="card card--dark" style="font-family: monospace; font-size: 1.15rem; line-height: 1.8;">
                     <p style="opacity: 0.6; margin-bottom: 1rem;">Email Body:</p>
                     <p>Hi <span style="color: var(--accent);">{{Name}}</span>,</p>
                     <p style="margin-top: 0.75rem;">Thanks for reaching out about <span style="color: var(--accent);">{{Service}}</span>!</p>
@@ -1533,9 +1652,9 @@
                 </div>
                 <div>
                     <ul class="feature-list">
-                        <li><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i> <strong>Keep it short</strong><br><span style="color: var(--text-muted); font-size: 0.9rem;">3-5 sentences max. Confirm you received it.</span></li>
-                        <li><i data-lucide="clock" style="width: 18px; height: 18px;"></i> <strong>Set expectations</strong><br><span style="color: var(--text-muted); font-size: 0.9rem;">Tell them when you'll follow up.</span></li>
-                        <li><i data-lucide="phone" style="width: 18px; height: 18px;"></i> <strong>Include contact</strong><br><span style="color: var(--text-muted); font-size: 0.9rem;">Your name and business info.</span></li>
+                        <li><i data-lucide="message-circle" style="width: 18px; height: 18px;"></i> <strong>Keep it short</strong><br><span style="color: var(--text-muted); font-size: 1.15rem;">3-5 sentences max. Confirm you received it.</span></li>
+                        <li><i data-lucide="clock" style="width: 18px; height: 18px;"></i> <strong>Set expectations</strong><br><span style="color: var(--text-muted); font-size: 1.15rem;">Tell them when you'll follow up.</span></li>
+                        <li><i data-lucide="phone" style="width: 18px; height: 18px;"></i> <strong>Include contact</strong><br><span style="color: var(--text-muted); font-size: 1.15rem;">Your name and business info.</span></li>
                     </ul>
                 </div>
             </div>
@@ -1546,7 +1665,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="play" style="width: 14px; height: 14px;"></i> Phase 1C</div>
-            <h2 class="reveal">Test the Full Flow <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">4</span></h2>
+            <h2 class="reveal">Test the Full Flow <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">4</span></h2>
             <div class="four-col reveal" style="margin: 2rem 0;">
                 <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.75rem;">1</div><i data-lucide="play" style="width: 32px; height: 32px; color: var(--accent);"></i><p style="margin-top: 0.5rem;">Click "Run Once"</p></div>
                 <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.75rem;">2</div><i data-lucide="file-text" style="width: 32px; height: 32px; color: var(--accent);"></i><p style="margin-top: 0.5rem;">Submit test form</p></div>
@@ -1563,7 +1682,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="power" style="width: 14px; height: 14px;"></i> Phase 1C</div>
-            <h2 class="reveal">Activate Your Scenario <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">5</span></h2>
+            <h2 class="reveal">Activate Your Scenario <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">5</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">Turn it on so it runs automatically!</p>
             <div class="two-col reveal">
                 <div class="steps">
@@ -1579,17 +1698,18 @@
         </div>
     </section>
 
+    <!-- PRESENTER NOTE: PAUSE — This is the big moment! Celebrate that their automation is LIVE. Ask if anyone needs help. -->
     <!-- SLIDE 40: CHECKPOINT 1C -->
     <section class="slide slide--content" style="background: #DCFCE7;">
         <div class="slide-content" style="text-align: center;">
             <p class="eyebrow reveal" style="color: #16A34A;">CHECKPOINT</p>
             <h2 class="reveal" style="color: #166534;">Phase 1C Complete!</h2>
             <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; margin: 2rem auto; max-width: 900px;" class="reveal">
-                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 0.8rem;">Gmail Added</p></div>
-                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 0.8rem;">Email Configured</p></div>
-                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 0.8rem;">Data Mapped</p></div>
-                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 0.8rem;">Test Passed</p></div>
-                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 0.8rem;">Activated!</p></div>
+                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 1.15rem;">Gmail Added</p></div>
+                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 1.15rem;">Email Configured</p></div>
+                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 1.15rem;">Data Mapped</p></div>
+                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 1.15rem;">Test Passed</p></div>
+                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 1.15rem;">Activated!</p></div>
             </div>
             <p class="reveal" style="font-size: 1.25rem; color: #166534; font-weight: 600;">Your basic automation is LIVE!</p>
         </div>
@@ -1602,9 +1722,9 @@
             <h2 class="reveal" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem;">System Complete!</h2>
             <p class="reveal" style="opacity: 0.8; margin-bottom: 2rem;">You just built a working lead response automation</p>
             <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;" class="reveal">
-                <div class="card" style="background: rgba(255,255,255,0.1); text-align: center; min-width: 120px;"><p style="font-size: 2rem; font-weight: 700; color: var(--accent);">$0</p><p style="font-size: 0.85rem; opacity: 0.7;">Total cost</p></div>
-                <div class="card" style="background: rgba(255,255,255,0.1); text-align: center; min-width: 120px;"><p style="font-size: 2rem; font-weight: 700; color: var(--accent);">2 min</p><p style="font-size: 0.85rem; opacity: 0.7;">Response time</p></div>
-                <div class="card" style="background: rgba(255,255,255,0.1); text-align: center; min-width: 120px;"><p style="font-size: 2rem; font-weight: 700; color: var(--accent);">24/7</p><p style="font-size: 0.85rem; opacity: 0.7;">Always on</p></div>
+                <div class="card" style="background: rgba(255,255,255,0.1); text-align: center; min-width: 120px;"><p style="font-size: 2rem; font-weight: 700; color: var(--accent);">$0</p><p style="font-size: 1.15rem; opacity: 0.7;">Total cost</p></div>
+                <div class="card" style="background: rgba(255,255,255,0.1); text-align: center; min-width: 120px;"><p style="font-size: 2rem; font-weight: 700; color: var(--accent);">2 min</p><p style="font-size: 1.15rem; opacity: 0.7;">Response time</p></div>
+                <div class="card" style="background: rgba(255,255,255,0.1); text-align: center; min-width: 120px;"><p style="font-size: 2rem; font-weight: 700; color: var(--accent);">24/7</p><p style="font-size: 1.15rem; opacity: 0.7;">Always on</p></div>
             </div>
         </div>
     </section>
@@ -1619,6 +1739,7 @@
         </div>
     </section>
 
+    <!-- PRESENTER NOTE: PACE CHECK — Troubleshooting section. Use pause-then-reveal pattern: show the problem, ask "what would you try?", then advance to solution. -->
     <!-- SLIDE 43: TROUBLESHOOTING SECTION -->
     <section class="slide slide--section" style="background: var(--bg-dark);">
         <div class="slide-content">
@@ -1628,47 +1749,95 @@
         </div>
     </section>
 
-    <!-- SLIDE 44: GOOGLE FORM ISSUES -->
+    <!-- SLIDE: GOOGLE FORM ISSUES — PROBLEMS -->
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="reveal" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                <div class="icon-box"><i data-lucide="file-text" style="width: 24px; height: 24px;"></i></div>
+                <div class="icon-box" style="background: #FEE2E2;"><i data-lucide="file-text" style="width: 24px; height: 24px; color: #DC2626;"></i></div>
                 <h2>Google Form <span class="accent">Issues</span></h2>
             </div>
             <div class="troubleshoot-grid reveal">
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Form not saving</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Browser or connection issue</p><p>✓ Refresh page, changes auto-save</p></div>
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Can't find spreadsheet</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Sheet not created yet</p><p>✓ Go to Responses tab, click Sheets icon</p></div>
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Responses not showing</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Form not accepting responses</p><p>✓ Check "Accepting responses" ON; use Settings tab</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #DC2626;"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Form not saving"</h4><p style="color: var(--text-muted);">Your changes seem to disappear...</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #DC2626;"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Can't find spreadsheet"</h4><p style="color: var(--text-muted);">Where did the sheet go?</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #DC2626;"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Responses not showing"</h4><p style="color: var(--text-muted);">You submitted but nothing appears...</p></div>
+            </div>
+            <p class="reveal" style="text-align: center; margin-top: 2rem; font-size: var(--fs-lg); font-weight: 600; color: var(--accent);">What would you try?</p>
+        </div>
+    </section>
+
+    <!-- SLIDE: GOOGLE FORM ISSUES — SOLUTIONS -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <div class="reveal" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="icon-box" style="background: #DCFCE7;"><i data-lucide="file-text" style="width: 24px; height: 24px; color: #16A34A;"></i></div>
+                <h2>Google Form <span style="color: #16A34A;">Fixes</span></h2>
+            </div>
+            <div class="troubleshoot-grid reveal">
+                <div class="troubleshoot-card" style="border-left-color: #16A34A;"><h4 style="color: #16A34A;"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Form not saving</h4><p>Refresh page — changes auto-save in Google Forms</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #16A34A;"><h4 style="color: #16A34A;"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Can't find spreadsheet</h4><p>Go to Responses tab, click the green Sheets icon</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #16A34A;"><h4 style="color: #16A34A;"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Responses not showing</h4><p>Check "Accepting responses" is ON in Settings tab</p></div>
             </div>
         </div>
     </section>
 
-    <!-- SLIDE 45: MAKE.COM ISSUES -->
+    <!-- SLIDE: MAKE.COM ISSUES — PROBLEMS -->
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="reveal" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                <div class="icon-box"><i data-lucide="zap" style="width: 24px; height: 24px;"></i></div>
+                <div class="icon-box" style="background: #FEE2E2;"><i data-lucide="zap" style="width: 24px; height: 24px; color: #DC2626;"></i></div>
                 <h2>Make.com <span class="accent">Issues</span></h2>
             </div>
             <div class="troubleshoot-grid reveal">
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Connection failed</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Google permissions expired</p><p>✓ Click connection, re-authorize</p></div>
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> No data found</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">No new rows since connecting</p><p>✓ Submit a new test form first</p></div>
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Scenario won't run</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Out of ops, not active, or set to On demand</p><p>✓ Check toggle ON; On demand only runs via Run once</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #DC2626;"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Connection failed"</h4><p style="color: var(--text-muted);">Red error when trying to connect...</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #DC2626;"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "No data found"</h4><p style="color: var(--text-muted);">Module runs but returns nothing...</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #DC2626;"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Scenario won't run"</h4><p style="color: var(--text-muted);">Nothing happens when you turn it on...</p></div>
+            </div>
+            <p class="reveal" style="text-align: center; margin-top: 2rem; font-size: var(--fs-lg); font-weight: 600; color: var(--accent);">What would you try?</p>
+        </div>
+    </section>
+
+    <!-- SLIDE: MAKE.COM ISSUES — SOLUTIONS -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <div class="reveal" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="icon-box" style="background: #DCFCE7;"><i data-lucide="zap" style="width: 24px; height: 24px; color: #16A34A;"></i></div>
+                <h2>Make.com <span style="color: #16A34A;">Fixes</span></h2>
+            </div>
+            <div class="troubleshoot-grid reveal">
+                <div class="troubleshoot-card" style="border-left-color: #16A34A;"><h4 style="color: #16A34A;"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Connection failed</h4><p>Click the connection, re-authorize with Google</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #16A34A;"><h4 style="color: #16A34A;"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> No data found</h4><p>Submit a new test form FIRST, then Run Once</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #16A34A;"><h4 style="color: #16A34A;"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Scenario won't run</h4><p>Check toggle is ON and scheduling is set (not "On demand")</p></div>
             </div>
         </div>
     </section>
 
-    <!-- SLIDE 46: EMAIL ISSUES -->
+    <!-- SLIDE: EMAIL ISSUES — PROBLEMS -->
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="reveal" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                <div class="icon-box"><i data-lucide="mail" style="width: 24px; height: 24px;"></i></div>
+                <div class="icon-box" style="background: #FEE2E2;"><i data-lucide="mail" style="width: 24px; height: 24px; color: #DC2626;"></i></div>
                 <h2>Email <span class="accent">Issues</span></h2>
             </div>
             <div class="troubleshoot-grid reveal">
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Email not sending</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Gmail not connected</p><p>✓ Re-add Gmail connection</p></div>
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Going to spam</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Generic subject or content</p><p>✓ Personalize with recipient's name</p></div>
-                <div class="troubleshoot-card"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> Missing data in email</h4><p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Fields not mapped correctly</p><p>✓ Re-map from Google Sheets bubbles</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #DC2626;"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Email not sending"</h4><p style="color: var(--text-muted);">Scenario runs but no email arrives...</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #DC2626;"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Going to spam"</h4><p style="color: var(--text-muted);">Email lands in junk folder...</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #DC2626;"><h4><i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i> "Missing data in email"</h4><p style="color: var(--text-muted);">Email arrives but fields are blank...</p></div>
+            </div>
+            <p class="reveal" style="text-align: center; margin-top: 2rem; font-size: var(--fs-lg); font-weight: 600; color: var(--accent);">What would you try?</p>
+        </div>
+    </section>
+
+    <!-- SLIDE: EMAIL ISSUES — SOLUTIONS -->
+    <section class="slide slide--content">
+        <div class="slide-content">
+            <div class="reveal" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="icon-box" style="background: #DCFCE7;"><i data-lucide="mail" style="width: 24px; height: 24px; color: #16A34A;"></i></div>
+                <h2>Email <span style="color: #16A34A;">Fixes</span></h2>
+            </div>
+            <div class="troubleshoot-grid reveal">
+                <div class="troubleshoot-card" style="border-left-color: #16A34A;"><h4 style="color: #16A34A;"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Email not sending</h4><p>Re-add the Gmail connection in Make.com</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #16A34A;"><h4 style="color: #16A34A;"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Going to spam</h4><p>Personalize the subject line with the recipient's name</p></div>
+                <div class="troubleshoot-card" style="border-left-color: #16A34A;"><h4 style="color: #16A34A;"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i> Missing data in email</h4><p>Re-map fields from Google Sheets data bubbles</p></div>
             </div>
         </div>
     </section>
@@ -1687,6 +1856,7 @@
         </div>
     </section>
 
+    <!-- PRESENTER NOTE: PACE CHECK — Phase 2 is optional/time-permitting. Check the clock. If less than 45 min remain, consider skipping to key takeaways. -->
     <!-- SLIDE 48: PHASE 2 SECTION -->
     <section class="slide slide--section">
         <div class="slide-content">
@@ -1703,8 +1873,8 @@
             <p class="eyebrow reveal" style="color: var(--accent);">AI BENEFITS</p>
             <h2 class="reveal">What AI <span class="accent">Adds</span></h2>
             <div class="comparison-grid reveal" style="margin-top: 2rem;">
-                <div class="card"><h3>WITHOUT AI</h3><div class="card" style="background: var(--warm-gray); margin-top: 1rem; font-family: monospace; font-size: 0.85rem;"><p>"Hi {{Name}},</p><p style="margin-top: 0.5rem;">Thanks for reaching out about {{Service}}!</p><p style="margin-top: 0.5rem;">I'll get back to you within 24 hours."</p></div><p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">Same message for everyone</p></div>
-                <div class="card" style="border: 2px solid var(--accent);"><h3 style="color: var(--accent);">WITH AI</h3><div class="card" style="background: var(--soft-lilac); margin-top: 1rem; font-family: monospace; font-size: 0.85rem;"><p>"Hi Sarah,</p><p style="margin-top: 0.5rem;">I see you're interested in website redesign for your bakery - that's exciting!</p><p style="margin-top: 0.5rem;">I've helped several food businesses create mouth-watering online presences..."</p></div><p style="margin-top: 1rem; color: var(--accent); font-size: 0.9rem; font-weight: 500;">Personalized to each inquiry</p></div>
+                <div class="card"><h3>WITHOUT AI</h3><div class="card" style="background: var(--warm-gray); margin-top: 1rem; font-family: monospace; font-size: 1.15rem;"><p>"Hi {{Name}},</p><p style="margin-top: 0.5rem;">Thanks for reaching out about {{Service}}!</p><p style="margin-top: 0.5rem;">I'll get back to you within 24 hours."</p></div><p style="margin-top: 1rem; color: var(--text-muted); font-size: 1.15rem;">Same message for everyone</p></div>
+                <div class="card" style="border: 2px solid var(--accent);"><h3 style="color: var(--accent);">WITH AI</h3><div class="card" style="background: var(--soft-lilac); margin-top: 1rem; font-family: monospace; font-size: 1.15rem;"><p>"Hi Sarah,</p><p style="margin-top: 0.5rem;">I see you're interested in website redesign for your bakery - that's exciting!</p><p style="margin-top: 0.5rem;">I've helped several food businesses create mouth-watering online presences..."</p></div><p style="margin-top: 1rem; color: var(--accent); font-size: 1.15rem; font-weight: 500;">Personalized to each inquiry</p></div>
             </div>
         </div>
     </section>
@@ -1713,7 +1883,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="brain" style="width: 14px; height: 14px;"></i> Phase 2</div>
-            <h2 class="reveal">Add OpenAI Module <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">1</span></h2>
+            <h2 class="reveal">Add OpenAI Module <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">1</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">Insert AI between Google Sheets and Gmail.</p>
             <div class="flow reveal" style="margin-bottom: 1.5rem;">
                 <div class="flow-item"><i data-lucide="table" style="width: 24px; height: 24px;"></i><p>Sheets</p></div>
@@ -1741,7 +1911,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="user-plus" style="width: 14px; height: 14px;"></i> Phase 2</div>
-            <h2 class="reveal">Create OpenAI Account <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">2</span></h2>
+            <h2 class="reveal">Create OpenAI Account <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">2</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">If you don't already have one, create a free account:</p>
             <div class="two-col reveal">
                 <div class="steps">
@@ -1761,7 +1931,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="key" style="width: 14px; height: 14px;"></i> Phase 2</div>
-            <h2 class="reveal">Get Your API Key <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">3</span></h2>
+            <h2 class="reveal">Get Your API Key <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">3</span></h2>
             <p class="reveal" style="margin-bottom: 1.5rem;">Create an API key to connect Make.com to OpenAI.</p>
             <div class="two-col reveal">
                 <div class="steps">
@@ -1783,12 +1953,12 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="settings" style="width: 14px; height: 14px;"></i> Phase 2</div>
-            <h2 class="reveal">Configure AI Settings <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">4</span></h2>
+            <h2 class="reveal">Configure AI Settings <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">4</span></h2>
             <div class="four-col reveal" style="margin-top: 2rem;">
-                <div class="card"><h4 style="color: var(--accent);">Model</h4><p style="font-weight: 600;">gpt-4o-mini</p><p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Best value for cost</p></div>
-                <div class="card"><h4 style="color: var(--accent);">Max Tokens</h4><p style="font-weight: 600;">300</p><p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Limits response length</p></div>
-                <div class="card"><h4 style="color: var(--accent);">Temperature</h4><p style="font-weight: 600;">0.7</p><p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Balanced creativity</p></div>
-                <div class="card"><h4 style="color: var(--accent);">System Message</h4><p style="font-weight: 600;">Role instructions</p><p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Fields may vary; use Messages if no System Message</p></div>
+                <div class="card"><h4 style="color: var(--accent);">Model</h4><p style="font-weight: 600;">gpt-4o-mini</p><p style="font-size: 1.15rem; color: var(--text-muted); margin-top: 0.5rem;">Best value for cost</p></div>
+                <div class="card"><h4 style="color: var(--accent);">Max Tokens</h4><p style="font-weight: 600;">300</p><p style="font-size: 1.15rem; color: var(--text-muted); margin-top: 0.5rem;">Limits response length</p></div>
+                <div class="card"><h4 style="color: var(--accent);">Temperature</h4><p style="font-weight: 600;">0.7</p><p style="font-size: 1.15rem; color: var(--text-muted); margin-top: 0.5rem;">Balanced creativity</p></div>
+                <div class="card"><h4 style="color: var(--accent);">System Message</h4><p style="font-weight: 600;">Role instructions</p><p style="font-size: 1.15rem; color: var(--text-muted); margin-top: 0.5rem;">Fields may vary; use Messages if no System Message</p></div>
             </div>
         </div>
     </section>
@@ -1799,7 +1969,7 @@
             <p class="eyebrow reveal" style="color: var(--accent);">AI PROMPT</p>
             <h2 class="reveal">Sample System <span class="accent">Message</span></h2>
             <div class="two-col reveal" style="margin-top: 1.5rem;">
-                <div class="card card--dark" style="font-family: monospace; font-size: 0.85rem; line-height: 1.7;">
+                <div class="card card--dark" style="font-family: monospace; font-size: 1.15rem; line-height: 1.7;">
                     <p style="opacity: 0.6; margin-bottom: 0.75rem;">System Message (paste this):</p>
                     <p>You are a friendly customer service assistant for [Your Business].</p>
                     <p style="margin-top: 0.5rem;">Write a warm, professional response to a new lead inquiry.</p>
@@ -1811,9 +1981,9 @@
                 </div>
                 <div>
                     <ul class="feature-list">
-                        <li><i data-lucide="target" style="width: 18px; height: 18px;"></i> <strong>Be specific</strong><br><span style="color: var(--text-muted); font-size: 0.9rem;">Tell AI exactly what tone and length you want.</span></li>
-                        <li><i data-lucide="link" style="width: 18px; height: 18px;"></i> <strong>Use variables</strong><br><span style="color: var(--text-muted); font-size: 0.9rem;">Map in data from Google Sheets.</span></li>
-                        <li><i data-lucide="ruler" style="width: 18px; height: 18px;"></i> <strong>Set limits</strong><br><span style="color: var(--text-muted); font-size: 0.9rem;">"Under 4 sentences" prevents rambling.</span></li>
+                        <li><i data-lucide="target" style="width: 18px; height: 18px;"></i> <strong>Be specific</strong><br><span style="color: var(--text-muted); font-size: 1.15rem;">Tell AI exactly what tone and length you want.</span></li>
+                        <li><i data-lucide="link" style="width: 18px; height: 18px;"></i> <strong>Use variables</strong><br><span style="color: var(--text-muted); font-size: 1.15rem;">Map in data from Google Sheets.</span></li>
+                        <li><i data-lucide="ruler" style="width: 18px; height: 18px;"></i> <strong>Set limits</strong><br><span style="color: var(--text-muted); font-size: 1.15rem;">"Under 4 sentences" prevents rambling.</span></li>
                     </ul>
                 </div>
             </div>
@@ -1824,7 +1994,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="play" style="width: 14px; height: 14px;"></i> Phase 2</div>
-            <h2 class="reveal">Test the AI Module <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">5</span></h2>
+            <h2 class="reveal">Test the AI Module <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">5</span></h2>
             <div class="two-col reveal" style="margin-top: 2rem;">
                 <div class="card card--lilac" style="text-align: center; padding: 2rem;">
                     <p>Click <strong>"Run once"</strong> for the scenario, then inspect output</p>
@@ -1845,7 +2015,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="link" style="width: 14px; height: 14px;"></i> Phase 2</div>
-            <h2 class="reveal">Connect AI Output to Email <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">6</span></h2>
+            <h2 class="reveal">Connect AI Output to Email <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">6</span></h2>
             <div class="flow reveal" style="margin: 2rem 0;">
                 <div class="flow-item"><i data-lucide="table" style="width: 24px; height: 24px;"></i><p>Sheets</p></div>
                 <i data-lucide="arrow-right" class="flow-arrow" style="width: 20px; height: 20px;"></i>
@@ -1864,7 +2034,7 @@
     <section class="slide slide--content">
         <div class="slide-content">
             <div class="phase-badge reveal"><i data-lucide="rocket" style="width: 14px; height: 14px;"></i> Phase 2</div>
-            <h2 class="reveal">Test Full AI Flow <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 0.9rem; margin-left: 0.5rem;">7</span></h2>
+            <h2 class="reveal">Test Full AI Flow <span class="step-number" style="display: inline-flex; width: 28px; height: 28px; font-size: 1.15rem; margin-left: 0.5rem;">7</span></h2>
             <div class="four-col reveal" style="margin: 2rem 0;">
                 <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.75rem;">1</div><p>Run once</p></div>
                 <div class="card" style="text-align: center;"><div class="step-number" style="margin: 0 auto 0.75rem;">2</div><p>Submit form</p></div>
@@ -1877,17 +2047,18 @@
         </div>
     </section>
 
+    <!-- PRESENTER NOTE: PAUSE — Final checkpoint. Ask if anyone needs help. Transition to closing. -->
     <!-- SLIDE 58: CHECKPOINT PHASE 2 -->
     <section class="slide slide--content" style="background: #DCFCE7;">
         <div class="slide-content" style="text-align: center;">
             <p class="eyebrow reveal" style="color: #16A34A;">CHECKPOINT</p>
             <h2 class="reveal" style="color: #166534;">Phase 2 Complete!</h2>
             <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; margin: 2rem auto; max-width: 900px;" class="reveal">
-                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 0.8rem;">OpenAI Added</p></div>
-                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 0.8rem;">API Connected</p></div>
-                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 0.8rem;">Prompt Set</p></div>
-                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 0.8rem;">Email Updated</p></div>
-                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 0.8rem;">Test Passed</p></div>
+                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 1.15rem;">OpenAI Added</p></div>
+                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 1.15rem;">API Connected</p></div>
+                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 1.15rem;">Prompt Set</p></div>
+                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 1.15rem;">Email Updated</p></div>
+                <div class="check-item"><div class="check-icon"><i data-lucide="check" style="width: 20px; height: 20px;"></i></div><p style="font-size: 1.15rem;">Test Passed</p></div>
             </div>
             <p class="reveal" style="font-size: 1.25rem; color: #166534; font-weight: 600;">Your leads now get AI-personalized responses!</p>
         </div>
@@ -1899,10 +2070,10 @@
             <p class="eyebrow reveal" style="color: var(--accent);">MAKE IT YOURS</p>
             <h2 class="reveal">Customization <span class="accent">Ideas</span></h2>
             <div class="four-col reveal" style="margin-top: 2rem;">
-                <div class="card"><div class="icon-box" style="margin-bottom: 0.75rem;"><i data-lucide="list-plus" style="width: 24px; height: 24px;"></i></div><h4>Add More Fields</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Service type, budget range, preferred contact time, how they heard about you</p></div>
-                <div class="card"><div class="icon-box" style="margin-bottom: 0.75rem;"><i data-lucide="mail" style="width: 24px; height: 24px;"></i></div><h4>Multiple Templates</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Create different email responses based on service type or lead source</p></div>
-                <div class="card"><div class="icon-box" style="margin-bottom: 0.75rem;"><i data-lucide="bar-chart-2" style="width: 24px; height: 24px;"></i></div><h4>Track Everything</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Add columns for lead status, follow-up dates, conversion tracking</p></div>
-                <div class="card"><div class="icon-box" style="margin-bottom: 0.75rem;"><i data-lucide="plug" style="width: 24px; height: 24px;"></i></div><h4>Add Integrations</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Connect to CRM, calendar booking, SMS notifications</p></div>
+                <div class="card"><div class="icon-box" style="margin-bottom: 0.75rem;"><i data-lucide="list-plus" style="width: 24px; height: 24px;"></i></div><h4>Add More Fields</h4><p style="font-size: 1.15rem; color: var(--text-muted);">Service type, budget range, preferred contact time, how they heard about you</p></div>
+                <div class="card"><div class="icon-box" style="margin-bottom: 0.75rem;"><i data-lucide="mail" style="width: 24px; height: 24px;"></i></div><h4>Multiple Templates</h4><p style="font-size: 1.15rem; color: var(--text-muted);">Create different email responses based on service type or lead source</p></div>
+                <div class="card"><div class="icon-box" style="margin-bottom: 0.75rem;"><i data-lucide="bar-chart-2" style="width: 24px; height: 24px;"></i></div><h4>Track Everything</h4><p style="font-size: 1.15rem; color: var(--text-muted);">Add columns for lead status, follow-up dates, conversion tracking</p></div>
+                <div class="card"><div class="icon-box" style="margin-bottom: 0.75rem;"><i data-lucide="plug" style="width: 24px; height: 24px;"></i></div><h4>Add Integrations</h4><p style="font-size: 1.15rem; color: var(--text-muted);">Connect to CRM, calendar booking, SMS notifications</p></div>
             </div>
         </div>
     </section>
@@ -1927,14 +2098,13 @@
             <p class="eyebrow reveal" style="color: var(--accent);">HELPFUL LINKS</p>
             <h2 class="reveal">Resources & <span class="accent">Support</span></h2>
             <div class="three-col reveal" style="margin-top: 2rem;">
-                <div class="card" style="text-align: center;"><h4>Google Forms Help</h4><p style="font-size: 0.85rem; color: var(--accent);">support.google.com/docs/forms</p></div>
-                <div class="card" style="text-align: center;"><h4>Make.com Academy</h4><p style="font-size: 0.85rem; color: var(--accent);">academy.make.com</p></div>
-                <div class="card" style="text-align: center;"><h4>OpenAI Documentation</h4><p style="font-size: 0.85rem; color: var(--accent);">platform.openai.com/docs</p></div>
+                <div class="card" style="text-align: center;"><h4>Google Forms Help</h4><p style="font-size: 1.15rem; color: var(--accent);">support.google.com/docs/forms</p></div>
+                <div class="card" style="text-align: center;"><h4>Make.com Academy</h4><p style="font-size: 1.15rem; color: var(--accent);">academy.make.com</p></div>
+                <div class="card" style="text-align: center;"><h4>OpenAI Documentation</h4><p style="font-size: 1.15rem; color: var(--accent);">platform.openai.com/docs</p></div>
             </div>
-            <div class="three-col reveal" style="margin-top: 1rem;">
-                <div class="card" style="text-align: center;"><h4>SBDC Business Resources</h4><p style="font-size: 0.85rem; color: var(--accent);">americassbdc.org</p></div>
-                <div class="card" style="text-align: center;"><h4>Workshop Recording</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Link will be emailed to you</p></div>
-                <div class="card" style="text-align: center;"><h4>Step-by-Step Guide PDF</h4><p style="font-size: 0.85rem; color: var(--text-muted);">Included in follow-up email</p></div>
+            <div class="two-col reveal" style="margin-top: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <div class="card" style="text-align: center;"><h4>SBDC Business Resources</h4><p style="font-size: 1.15rem; color: var(--accent);">americassbdc.org</p></div>
+                <div class="card" style="text-align: center;"><h4>Follow-Up Materials</h4><p style="font-size: 1.15rem; color: var(--text-muted);">Recording + step-by-step guide emailed to you</p></div>
             </div>
         </div>
     </section>
@@ -1973,30 +2143,20 @@
         </div>
     </section>
 
-    <!-- SLIDE 64: CONTACT -->
-    <section class="slide slide--content">
-        <div class="slide-content" style="text-align: center;">
-            <h2 class="reveal">Poppy Marketing & Consulting</h2>
-            <p class="reveal" style="color: var(--accent); margin-bottom: 2rem;">Fortune 500 Strategy at Local Business Prices</p>
-            <div class="reveal" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-                <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; padding: 12px;"><img src="Poppy-brand-logo-white.png" alt="Poppy" style="width: 100%; height: 100%; object-fit: contain;"></div>
-                <div style="text-align: left;"><p style="font-weight: 600; font-size: 1.25rem;">Ricardo Gattas-Moras</p></div>
-            </div>
-            <div class="reveal" style="display: flex; flex-direction: column; gap: 0.75rem; align-items: center;">
-                <div style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="mail" style="width: 18px; height: 18px; color: var(--accent);"></i><span>ricardo@poppymarketingandconsulting.com</span></div>
-                <div style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="phone" style="width: 18px; height: 18px; color: var(--accent);"></i><span>(941) 777-4933</span></div>
-                <div style="display: flex; align-items: center; gap: 0.75rem;"><i data-lucide="globe" style="width: 18px; height: 18px; color: var(--accent);"></i><span>poppymarketingandconsulting.com</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 65: THANK YOU -->
+    <!-- SLIDE: THANK YOU (last slide — logo permitted here per SBDC rules) -->
     <section class="slide slide--title">
         <div class="bg-gradient bg-gradient--purple" style="bottom: -150px; left: -150px;"></div>
         <div class="slide-content" style="text-align: center;">
+            <div class="reveal" style="margin-bottom: 2rem;">
+                <img src="Poppy-brand-logo-white.png" alt="Poppy Marketing" style="width: 56px; height: 56px; object-fit: contain;">
+            </div>
             <h2 class="reveal" style="font-size: clamp(2.5rem, 5vw, 4rem);">Thank You!</h2>
             <p class="reveal" style="font-size: 1.25rem; opacity: 0.8; margin-top: 1rem;">Now go never miss a lead again.</p>
             <p class="reveal" style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 12px; display: inline-block;">Your automation is ready to work 24/7</p>
+            <div class="reveal" style="margin-top: 2rem; opacity: 0.7;">
+                <p style="font-weight: 600;">Ricardo Gattas-Moras</p>
+                <p>ricardo@poppymarketingandconsulting.com</p>
+            </div>
         </div>
         <div class="slide-footer"><span>© 2026 Poppy Marketing</span><span>poppymarketingandconsulting.com</span></div>
     </section>
